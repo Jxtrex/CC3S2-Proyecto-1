@@ -1,5 +1,5 @@
 # Criterios de Aceptación
- | ID y nombre de la historia de  | Descripción de la historia de usuario | Prioridad | 
+ | ID y nombre de la historia del usuario  |AC-ID| Descripción del criterio de aceptación | Estado (completado,pendiente,en progreso| 
 | ------------- | ------------- | ------------- | 
 |HU-1 Creación de Cuenta de Usuario|AC-1.1 Creación exitosa de una cuenta de usuario válida|Dado un nombre de usuario válido inexistente 
 Cuando creo una cuenta de usuario con este nombre de usuario 
