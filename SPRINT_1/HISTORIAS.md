@@ -9,5 +9,5 @@ JOSHUA
 - Como un Cliente registrado necesito ver la lista de repeticiones
 ***
 GABRIEL
-- Como un Cliente registrado necesito poder iniciar sesión para poder jugar una partida.
-- Como un Cliente registrado necesito poder cerrar sesión para evitar que otro jugador juegue con mi cuenta.
+- Como un `usuario registrado` necesito `poder iniciar sesión` para `poder jugar una partida`.
+- Como un `usuario registrado` necesito `poder cerrar sesión` para `evitar que otro jugador juegue con mi cuenta`.
