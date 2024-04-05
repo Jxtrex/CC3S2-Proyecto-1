@@ -1,7 +1,8 @@
 # Criterios de Aceptación
- | ID y nombre de la historia del usuario  |AC-ID| Descripción del criterio de aceptación | Estado (completado,pendiente,en progreso| 
+ | ID y nombre de la historia del usuario  |AC-ID| Descripción del criterio de aceptación | Estado (completado,pendiente,en progreso)| 
 | ------------- | ------------- | ------------- | ---|
-|HU-1 Creación de Cuenta de Usuario|AC-1.1 Creación exitosa de una cuenta de usuario válida|Dado un nombre de usuario válido inexistente Cuando creo una cuenta de usuario con este nombre de usuario y una contraseña válida que coincida con una contraseña confirmada Entonces el sistema debería crear una cuenta nueva y mostrar un mensaje "Registrado con éxito"|En progreso| 
-| HU-1  | Creación de Cuenta de Usuario  | Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión en la aplicación English Draughts  | XL  | 6 | TBD | pendiente | 
-| HU-1  | Creación de Cuenta de Usuario  | Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión en la aplicación English Draughts  | XL  | 6 | TBD | pendiente | 
-| HU-1  | Creación de Cuenta de Usuario  | Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión en la aplicación English Draughts  | XL  | 6 | TBD | pendiente | 
+|HU-1 Creación de Cuenta de Usuario|AC-1.1 Creación exitosa de una cuenta de usuario válida|``Dado`` un nombre de usuario válido inexistente `Cuando` creo una cuenta de usuario con este nombre de usuario `Y` una contraseña válida que coincida con una contraseña confirmada `Entonces` el sistema debería crear una cuenta nueva y mostrar un mensaje "Registrado con éxito"|En progreso| 
+| |AC-1.2 Creación de una cuenta fallida con un nombre de usuario existente|`Dado` un nombre de usuario ya existente `Cuando` creo una cuenta con este nombre de usuario `Y` el campo de contraseña `Y` confirmación de contraseña son válidas `Entonces` el sistema no debería permitir crear una cuenta `Y` debería mostrar un mensaje de error|En progreso| 
+| |AC-1.3 Creación de una cuenta fallida con una contraseña no válida|`Dado` un nombre de usuario válido inexistente `Cuando` un usuario crea una cuenta con este nombre de usuario `Y` una contraseña no válida `Y` la misma contraseña confirmada `Entonces` el sistema no debería permitir crear la cuenta `Y` debería mostrar un mensaje de error|En progreso|
+||AC-1.4 Prevención de creación de cuenta con un nombre de usuario malicioso|`Dado` un nombre de usuario no válido malicioso `Y` una contraseña válida `Cuando` un usuario crea una cuenta con este nombre de usuario `Entonces` el sistema no debería permitir crear la cuenta `Y` debería mostrar un mensaje de error |En progreso|
+|FLAG|FLAG|FLAG|FLAG|
