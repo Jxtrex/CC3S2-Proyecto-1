@@ -1,13 +1,10 @@
 package org.example.Modelo;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.*;
 
 public class ConsultasUsuario extends ConexionSQL{
     // Operaciones Crear, Leer de la Tabla de Usuarios
-    public boolean insertarUsuarios(ModeloUsuarios usuario) {
+    public boolean insertarUsuarios(ModeloUsuarios usuario) {// Inserta usuario, salt y hash en la tabla Usuarios
         PreparedStatement declaracionPreparada = null; //Objeto que llevara la consulta SQL
         Connection conexion = getConnection();//objeto que recibira la conexion a la DB
         String consulta = "INSERT INTO Usuarios "
@@ -40,7 +37,43 @@ public class ConsultasUsuario extends ConexionSQL{
 
 
         }
+    }
+    public boolean verificarUsuarioEnUsuarios(String usuario){//Consulta a la tabla y retorna true si ya existe en la tabla
+        PreparedStatement declaracionPreparada = null; //Objeto que llevara la consulta SQL
+        Connection conexion = getConnection();//objeto que recibira la conexion a la DB
+        String consulta = "SELECT COUNT(*) AS count FROM Usuarios WHERE usuario = ?";
+        try{
+            declaracionPreparada = conexion.prepareStatement(consulta);
+            //Usamos el parametro usuario para rellenar la consulta
+            declaracionPreparada.setString(1,usuario);
+            //Ejecutamos la consulta
+            ResultSet resultado = declaracionPreparada.executeQuery();
+            //Usamos la cantidad de veces que aparece el nombre de usuario(unico) para verificar que existe
+            if(resultado.next()){
+                int count = resultado.getInt("count");
+                if(count>0){
+                    System.out.println("El nombre de usuario ya existe");
+                    return true;
+                }
+                else{
+                    System.out.println("El nombre de usuario no existe");
+                    return false;
+                }
+            }
+        }
+        catch(SQLException e){
+            System.err.println(e);
 
+        }
+        finally{
+            try{
+                conexion.close();//Siempre cerramos la conexion
+            }
+            catch(SQLException e){
+                System.err.println(e);
+            }
+        }
+        return false;
 
     }
 }

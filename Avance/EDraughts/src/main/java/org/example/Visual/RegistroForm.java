@@ -1,5 +1,7 @@
 package org.example.Visual;
 
+import org.example.Controlador.RegistrarUsuario;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +22,25 @@ public class RegistroForm extends JFrame{
                 LoginForm formulario = new LoginForm();
                 formulario.setConfig();
                 fRegistro.dispose();
+            }
+        });
+
+        btnCrearCuentaNueva.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String textoUsuario = txtNewUserName.getText();//Le enviamos el valor del usuario para su verificacion
+                if(!txtNewUserName.getText().isEmpty()){
+                    RegistrarUsuario registrarUsuario = new RegistrarUsuario();
+                    //Caso ideal usuario correcto y contraseñas adecuadas
+                    if(!registrarUsuario.verificarExisteUsuario(textoUsuario)) {//Falta considerar los casos de si la contraseña es segura y si las contraseñas coincide con confirmar
+                        System.out.println("falta implementar registro usuario");
+
+                    }
+
+                else{
+                    //Lanzar mensaje "Nombre de usuario vacio", tambien se puede agregar lo de longitud minima, pero no se si agregarlo aqui o en la clase de RegistrarUsuario
+                }
+                };
             }
         });
     }
