@@ -23,7 +23,7 @@ public class MenuIniciodeSesion extends JFrame {
         btnIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                dispose();
+                dispose();
                 MenudelJuego menudelJuego = new MenudelJuego();
             }
         });

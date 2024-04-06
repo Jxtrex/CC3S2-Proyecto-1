@@ -19,7 +19,7 @@ public class MenudelJuego extends JFrame {
         crearPartidaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                dispose();
+                dispose();
                 Tablero tablero = new Tablero();
             }
         });
