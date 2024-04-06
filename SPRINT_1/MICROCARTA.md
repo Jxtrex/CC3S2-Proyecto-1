@@ -2,7 +2,10 @@
 ## Título del Proyecto: EDraughts
 
 ## Visión:
-Permitir a los usuarios poner a prueba sus habilidades en el juego de damas (English Draughts) ya sea contra jugadores en línea, sus amigos o contra el computador.
+Ofrecer una aplicación que permita a los usuarios poner a prueba sus habilidades en el juego de damas (English Draughts) ya sea contra jugadores en línea, sus amigos o contra el computador.
+
+## Declaración de la misión/propósito del proyecto
+El propósito del proyecto es desarrollar una aplicación en equipo poniendo en práctica nuestros conocimientos adquiridos en el curso de Desarrollo de Software.
 
 ## Objetivos:
 - Completar la interfaz gráfica del juego y un sistema básico de gestión de usuarios en 5 días.
