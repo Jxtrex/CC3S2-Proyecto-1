@@ -1,2 +1,2 @@
-rootProject.name = "SwingDemo"
+rootProject.name = "EDraughts"
 

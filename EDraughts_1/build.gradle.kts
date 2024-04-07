@@ -12,10 +12,6 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    //DriverManager library mysql-connector-java
-    implementation("mysql:mysql-connector-java:8.0.33")
-    //mySQL Server Driver
-    implementation("com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre7")
 }
 
 tasks.test {
