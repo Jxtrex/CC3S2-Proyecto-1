@@ -2,7 +2,7 @@
 ## Título del Proyecto: EDraughts
 
 ## Visión:
-Ofrecer una aplicación que permita a los usuarios poner a prueba sus habilidades en el juego de damas (English Draughts) ya sea contra jugadores en línea, sus amigos o contra el computador.
+Ofrecer una aplicación que permita a los usuarios poner a prueba sus habilidades en el juego de damas (English Draughts) ya sea contra jugadores en línea, sus amigos o contra la máquina.
 
 ## Declaración de la misión/propósito del proyecto
 El propósito del proyecto es desarrollar una aplicación en equipo poniendo en práctica nuestros conocimientos adquiridos en el curso de Desarrollo de Software.
@@ -19,14 +19,26 @@ posteriores al periodo de pruebas.
 - Incluir un modo multijugador entre usuarios registrados.
 - Implementar un modo de juego contra la máquina en un modo mayor al novato.
 
-## Elevator Pitch: (se debe eliminar este título)
-## Valor de negocio: (se debe eliminar este título)
-## Clientes y usuarios: personas que tomarán decisiones de compra o interactuarán con su producto.  (se debe eliminar este título)
-- Mi compañeros de clase  
+## Elevator Pitch:
+Para los alumnos de la UNI que quieran una mejor manera de matar el tiempo,E-Draughts es un juego web fácilmente accesible que cuenta con multijugador online.
+
+## Valor de negocio:
+I/. 1 000 000
+
+## Clientes y usuarios:
+- Mis compañeros de clase  
 - El profesor del curso
 - El equipo de desarrollo del Grupo 1
-## Métricas: cómo medir el valor del negocio(se debe eliminar este título)
+- 
+## Métricas: 
+Las siguientes son métricas tentativas que se usarán para calcular el valor del negocio:
+-  Disponibilidad del servicio del juego
+-  
+
 ## Hitos: momentos importantes en el tiempo (se debe eliminar este título)
+- Lanzamiento del juego en su estado `pre-alfa`
+- Lanzamiento del juego en su estado `alfa`
+- Lanzamiento del juego en su estado `beta`
 ## Riesgos: cosas que pueden amenazar o descarrilar su proyecto (se debe eliminar este título)
 - Conflicto de horarios de clases del equipo de desarrollo que limitan el tiempo que se le puede dedicar al proyecto    
 
