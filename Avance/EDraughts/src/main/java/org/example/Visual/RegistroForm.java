@@ -1,6 +1,6 @@
 package org.example.Visual;
 
-import org.example.Controlador.RegistrarUsuario;
+import org.example.Controlador.ControladorUsuario;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,9 +30,9 @@ public class RegistroForm extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String textoUsuario = txtNewUserName.getText();//Le enviamos el valor del usuario para su verificacion
                 if(!txtNewUserName.getText().isEmpty()){
-                    RegistrarUsuario registrarUsuario = new RegistrarUsuario();
+                    ControladorUsuario controladorUsuario = new ControladorUsuario();
                     //Caso ideal usuario correcto y contraseñas adecuadas
-                    if(!registrarUsuario.verificarExisteUsuario(textoUsuario)) {//Falta considerar los casos de si la contraseña es segura y si las contraseñas coincide con confirmar
+                    if(!controladorUsuario.verificarExisteUsuario(textoUsuario)) {//Falta considerar los casos de si la contraseña es segura y si las contraseñas coincide con confirmar
                         System.out.println("falta implementar registro usuario");
 
                     }

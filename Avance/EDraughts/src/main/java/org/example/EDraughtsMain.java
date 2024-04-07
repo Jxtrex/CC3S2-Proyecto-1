@@ -1,8 +1,11 @@
 package org.example;
 
+import org.example.Controlador.ControladorUsuario;
 import org.example.Modelo.ConexionSQL;
 import org.example.Visual.LoginForm;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -13,14 +16,27 @@ public class EDraughtsMain {
 
         //System.out.println("Check!");
         /*
-        ConexionSQL conexionprueba = new ConexionSQL();
-        Connection conexion = conexionprueba.getConnection();
+        //Codigo de prueba para el salt y hash que usaremos en las contraseñas
+        byte[] saltPrueba;
+        String hashPrueba;
+        String pwd = "peipotoA123134#";
+        ControladorUsuario controlprueba = new ControladorUsuario();
+        saltPrueba = controlprueba.generarSalt();
+        System.out.print("Salt es: ");
+        for(byte i:saltPrueba){
+            System.out.print(i);
+        }
+        System.out.println();
         try {
-            conexion.close();
-        } catch (SQLException e) {
+            hashPrueba = controlprueba.generarHash(saltPrueba,pwd);
+            System.out.println("Hash es: "+hashPrueba);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (InvalidKeySpecException e) {
             throw new RuntimeException(e);
         }
 
          */
+
     }
 }
