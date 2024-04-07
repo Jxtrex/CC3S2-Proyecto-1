@@ -1,4 +1,4 @@
-package org.example.Modelo;
+package org.produccion.Modelo;
 
 public class ModeloUsuarios {// Esquema temporal para la tabla Usuarios
     private int userID;

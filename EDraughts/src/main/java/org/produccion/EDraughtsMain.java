@@ -1,14 +1,7 @@
-package org.example;
+package org.produccion;
 
-import org.example.Controlador.ControladorUsuario;
-import org.example.Modelo.ConexionSQL;
-import org.example.Visual.LoginForm;
-import org.example.Visual.Tablero.TableroForm;
-
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.sql.Connection;
-import java.sql.SQLException;
+import org.produccion.Visual.LoginForm;
+import org.produccion.Visual.Tablero.TableroForm;
 
 public class EDraughtsMain {
     public static void main(String[] args) {

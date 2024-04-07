@@ -1,4 +1,4 @@
-package org.example.Visual;
+package org.produccion.Visual;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

@@ -1,4 +1,4 @@
-package org.example.Visual.Tablero;
+package org.produccion.Visual.Tablero;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,6 @@
-package org.example.Visual;
+package org.produccion.Visual;
 
-import org.example.Controlador.ControladorUsuario;
+import org.produccion.Controlador.ControladorUsuario;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
