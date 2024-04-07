@@ -7,7 +7,6 @@ import org.example.Modelo.ModeloUsuarios;
 import javax.crypto.SecretKeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
@@ -24,7 +23,7 @@ public class ControladorUsuario extends ConexionSQL {
     }
     public boolean verificarExisteUsuario(String usuario){ //devuelve true si el usuario existe en la tabla Usuarios
         consultasUsuario = new ConsultasUsuario();//Si alguien sabe una manera practica de volverlo null al terminar la operacion me avisa
-        //Falta considerar el caso que la string obtenida usuario sea malicioso
+
         if(consultasUsuario.verificarUsuarioEnUsuarios(usuario)){
             System.out.println("El nombre de usuario ya existe");
             return true;
@@ -35,7 +34,8 @@ public class ControladorUsuario extends ConexionSQL {
         }
 
     }
-    public boolean verificarCaracteristicasUsuario(String usuario){// Verifica que el usuario tenga length>6, quiza pueda verificarse en RegistroForm
+    public boolean verificarCaracteristicasUsuario(String usuario){//Retorna true si cumple con seguridad y caracteristicas
+        // Aqui podemos hacer las verificaciones sobre el usuario malicioso y la estructura(length>7)
         return false;
     }
     public boolean verificarContraseniaSegura(char[] contrasenia){//devuelve true si es segura
@@ -73,13 +73,14 @@ public class ControladorUsuario extends ConexionSQL {
             byte[] hash = secretKeyFactory.generateSecret(spec).getEncoded();//generamos el hash
             return Base64.getEncoder().encodeToString(hash);
     }
-    public boolean registrarUsuario(String usuario, String contrasenia){ //Solo es llamado cuando usuario y contrasenia son adecuados
+    public boolean registrarUsuario(String usuario, char[] contrasenia){
         //Retorna true si el registro del usuario fue exitoso
         consultasUsuario = new ConsultasUsuario();
         modeloUsuarios = new ModeloUsuarios();
         byte[] salt = generarSalt();
+        String stringContrasenia = new String(contrasenia);//Si algo falla es esto, inicialmente habia trabajado con un String
         try {
-            String hash = generarHash(salt,contrasenia);
+            String hash = generarHash(salt,stringContrasenia);
             modeloUsuarios.setUsuario(usuario);
             modeloUsuarios.setHash(hash);
             modeloUsuarios.setSalt(salt);
@@ -90,6 +91,29 @@ public class ControladorUsuario extends ConexionSQL {
             throw new RuntimeException(e);
         } catch (InvalidKeySpecException e) {
             throw new RuntimeException(e);
+        }
+        return false;
+    }
+    //Quiza deba modificarlo a que devuelva int 0 , 1, 2 para saber si fallo el usuario o la contraseña
+    public boolean iniciarSesion(String usuario, char[] contrasenia){//retorna True si el inicio de sesion fue exitoso
+        if(verificarExisteUsuario(usuario)){//1ro Verificamos si existe el usuario
+            ModeloUsuarios modeloUsuariosSesion = new ModeloUsuarios();
+            modeloUsuariosSesion.setUsuario(usuario);
+            consultasUsuario = new ConsultasUsuario();
+            if(consultasUsuario.leerSaltHash(modeloUsuariosSesion)){// Leemos el salt y hash que corresponden al usuario en la tabla Usuarios
+                try {
+                    //1ro calculamos el hash generado por la contrasenia dada y el salt de la tabla
+                    String hashVerificacion = generarHash(modeloUsuariosSesion.getSalt(),String.valueOf(contrasenia));
+                    //Comparamos si el hash generado coincide con el hash guardado en la tabla Usuarios
+                    if(hashVerificacion.equals(modeloUsuariosSesion.getHash())){
+                        return true;
+                    }
+                } catch (NoSuchAlgorithmException e) {
+                    throw new RuntimeException(e);
+                } catch (InvalidKeySpecException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
         return false;
     }

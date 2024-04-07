@@ -74,6 +74,33 @@ public class ConsultasUsuario extends ConexionSQL{
             }
         }
         return false;
+    }
+    public boolean leerSaltHash(ModeloUsuarios modeloUsuarios){// Retorna true si pudo leer salt y hash que corresponden al usuario en la tabla Usuarios
+        PreparedStatement declaracionPreparada = null; //Objeto que llevara la consulta SQL
+        Connection conexion = getConnection();//objeto que recibira la conexion a la DB
+        ResultSet resultado = null;//Objeto que recibira el resultado de la consulta
+        String consulta = "SELECT salt,hash FROM Usuarios WHERE usuario = ?";
+        try{
+            declaracionPreparada = conexion.prepareStatement(consulta);
+            declaracionPreparada.setString(1,modeloUsuarios.getUsuario());
+            resultado = declaracionPreparada.executeQuery();
+            if(resultado.next()){
+                modeloUsuarios.setSalt(resultado.getBytes("salt"));
+                modeloUsuarios.setHash(resultado.getString("hash"));
+                return true;
+            }
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally{
+            try{
+                conexion.close();//Siempre cerramos la conexion
+            }
+            catch(SQLException e){
+                System.err.println(e);
+            }
+        }
+        return false;
     }
 }
