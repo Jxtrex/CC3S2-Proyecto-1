@@ -29,3 +29,10 @@
     - [ ] Contra otro usuario
     - [ ] Contra la máquina
 - [ ] Marco de Prueba Unitario 
+
+## Reglas de Juego
+- Las piezas se mueven en diagonal de casilla en casilla y solo hacia adelante, excepto la reina
+- Cuando una pieza llega al otro extremo del tablero se puede mover atrás y hacia adelante, pero siempre una casilla
+- Puedes hacer una captura concatenada si las piezas están en fila separadas por una casilla.
+- Si puedes capturar una pieza estás obligado a hacerlo
+- Si tienes dos caminos distintos de captura tienes que elegir el que te ofrezca más fichas para capturar, si los dos caminos ofrecen las misma cantidad de fichas puedes elegir cualquiera.
