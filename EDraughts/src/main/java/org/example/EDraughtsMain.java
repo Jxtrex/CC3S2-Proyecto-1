@@ -18,7 +18,6 @@ public class EDraughtsMain {
         //Prueba del tablero-------
         TableroForm tableroForm = new TableroForm();
         tableroForm.setConfig();
-
         //-------------------------
 
         //System.out.println("Check!");
