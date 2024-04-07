@@ -28,5 +28,4 @@
 - [ ] Multijugador
     - [ ] Contra otro usuario
     - [ ] Contra la máquina
-- [ ] Jugar contra la máquina en dificultad intermedia a más
 - [ ] Marco de Prueba Unitario 
