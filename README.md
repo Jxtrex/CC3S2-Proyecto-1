@@ -30,9 +30,13 @@
     - [ ] Contra la máquina
 - [ ] Marco de Prueba Unitario 
 
-## Reglas de Juego
+## Reglas de Juego: [Fuente de las Reglas](https://www.draughtsforandroid.com/news/draughts-different-rules-game-53.html) (Link temporal hasta conseguir una fuente más oficial)
+- El tablero es de 8x8 casillas, las piezas se mueven es los espacios oscuros.
+- Cada jugador tiene 12 piezas.
+- El jugador con las piezas oscuras realiza el primer movimiento
 - Las piezas se mueven en diagonal de casilla en casilla y solo hacia adelante, excepto la reina
-- Cuando una pieza llega al otro extremo del tablero se puede mover atrás y hacia adelante, pero siempre una casilla
-- Puedes hacer una captura concatenada si las piezas están en fila separadas por una casilla.
-- Si puedes capturar una pieza estás obligado a hacerlo
-- Si tienes dos caminos distintos de captura tienes que elegir el que te ofrezca más fichas para capturar, si los dos caminos ofrecen las misma cantidad de fichas puedes elegir cualquiera.
+- Cuando una pieza llega al otro extremo del tablero se vuelve rey.
+- El rey puede moverse y capturar hacia adelante y hacia atrás, pero solo una casilla.
+- Puedes hacer una captura concatenada si las piezas están en fila separadas por una casilla, si es una pieza regular solo puede capturar hacia adelante.
+- Si puedes capturar una pieza estás obligado a hacerlo, pero no estás obligado a capturar la mayor cantidad de piezas posible.
+- Si el jugador no captura cuando debería debe moverse hacia atrás y corregir su error.
