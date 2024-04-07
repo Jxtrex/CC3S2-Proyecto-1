@@ -9,5 +9,3 @@
 | HU-5  | Creación de una partida  | Como un `usuario registrado` necesito `poder crear una partida ` para `comprobar que soy capaz de ingresar al juego`  |2 | 4 | TBD |pendiente | 
 | HU-6  | Jugar al Juego  | Como un `usuario registrado` necesito `poder jugar una partida completa` para `comprobar que el juego funciona correctamente`  |3 | 6 | TBD |pendiente | 
 | HU-7  | Grabación de una partida  | Como un `usuario registrado` necesito `poder grabar una partida` para `revisarla después por retroalimentación`  | 2 | 1 | Se completa  |En curso | 
-| HU-8  | Jugar contra otro Usuario  | Como un `usuario registrado` necesito `poder jugar contra otro usuario` para `hacer uso del modo multijugador`  | 3 | 1 | Se completa  |En curso | 
-| HU-9  | Jugar contra la Máquina  | Como un `usuario registrado` necesito `poder contra la máquina` para `medir mis habilidades`  | 5 | 48 | Se completa  |En curso | 
