@@ -4,8 +4,8 @@
 | Nombre                | Apellidos     | Código    |
 | --------------------- | ------------- | --------- |
 | Juan de Dios Fernando | Lerzundi Ríos | 20191394C |
-| Juan de Dios Fernando | Lerzundi Ríos | 20191394C |
-| Juan de Dios Fernando | Lerzundi Ríos | 20191394C |
+| Joshua Jean Paul  | Del Rosario Sosa | 20191394C |
+| Gabriel Esteban  | Quiroz Gomez | 20191394C |
  
 ## Lista de Funciones del Programa:
 - [ ] Creación de Cuenta de Usuario:
