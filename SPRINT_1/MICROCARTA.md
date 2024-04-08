@@ -35,14 +35,14 @@ Las siguientes son métricas tentativas que se usarán para calcular el valor de
 -  Disponibilidad del servicio del juego
 -  
 
-## Hitos: momentos importantes en el tiempo (se debe eliminar este título)
+## Hitos: momentos importantes en el tiempo
 - Lanzamiento del juego en su estado `pre-alfa`
 - Lanzamiento del juego en su estado `alfa`
 - Lanzamiento del juego en su estado `beta`
-## Riesgos: cosas que pueden amenazar o descarrilar su proyecto (se debe eliminar este título)
+## Riesgos: cosas que pueden amenazar o descarrilar su proyecto 
 - Conflicto de horarios de clases del equipo de desarrollo que limitan el tiempo que se le puede dedicar al proyecto    
 
-## Autores de esta microcarta (se debe eliminar este título)
+## Autores de esta microcarta 
 -   Juan de Dios Fernando Lerzundi Ríos
 -   Joshua Jean Paul Del Rosario Sosa
 -   Gabriel Esteban Quiroz Gomez
