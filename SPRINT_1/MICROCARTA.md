@@ -19,8 +19,8 @@ posteriores al periodo de pruebas.
 - Incluir un modo multijugador entre usuarios registrados.
 - Implementar un modo de juego contra la máquina en un modo mayor al novato.
 
-## Elevator Pitch:
-Para los alumnos de la UNI que quieran una mejor manera de matar el tiempo,E-Draughts es un juego web fácilmente accesible que cuenta con multijugador online.
+## [Elevator Pitch](https://github.com/Jxtrex/CC3S2-Proyecto-1/blob/main/SPRINT_1/ELEVATORPITCH.md):
+Para los alumnos de la UNI que quieran una mejor manera de matar el tiempo,E-Draughts es un juego web fácilmente accesible que cuenta con multijugador online. 
 
 ## Valor de negocio:
 I/. 1 000 000
