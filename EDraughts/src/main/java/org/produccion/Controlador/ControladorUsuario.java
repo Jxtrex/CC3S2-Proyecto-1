@@ -101,34 +101,7 @@ public class ControladorUsuario extends ConexionSQL {
         }
     }
 
-    public int iniciarSesion(String usuario, char[] contrasenia) {
-        int estado = 0;
-        if (this.verificarExisteUsuario(usuario)) {
-            ModeloUsuarios modeloUsuariosSesion = new ModeloUsuarios();
-            modeloUsuariosSesion.setUsuario(usuario);
-            this.consultasUsuario = new ConsultasUsuario();
-            if (this.consultasUsuario.leerSaltHash(modeloUsuariosSesion)) {
-                try {
-                    String hashVerificacion = generarHash(modeloUsuariosSesion.getSalt(), String.valueOf(contrasenia));
-                    if (hashVerificacion.equals(modeloUsuariosSesion.getHash())) {
-                        estado = 1;
-                    } else {
-                        estado = 2;
-                    }
-                } catch (NoSuchAlgorithmException var6) {
-                    NoSuchAlgorithmException e = var6;
-                    throw new RuntimeException(e);
-                } catch (InvalidKeySpecException var7) {
-                    InvalidKeySpecException e = var7;
-                    throw new RuntimeException(e);
-                }
-            }
-        } else {
-            estado = 3;
-        }
 
-        return estado;
-    }
     public int verificarRegistroUsuario(JTextField txtUserName, JPasswordField txtContrasenia, JPasswordField txtConfirmarContrasenia){
         //Retorna un int que indique el estado del Registro
         String textoUsuario = txtUserName.getText();//Recibimos el valor del Usuario
@@ -142,13 +115,10 @@ public class ControladorUsuario extends ConexionSQL {
             // Al menos una de las contraseñas está vacía
             return 2;
         }
-
-
         if (!Arrays.equals(contrasenia, confirmarContrasenia)) {
             // Las contraseñas no coinciden
             return 3;
         }
-
         if (!verificarCaracteresUsuario(textoUsuario)) {
             // Usuario no válido
             return 4;
@@ -173,5 +143,64 @@ public class ControladorUsuario extends ConexionSQL {
         } else {
             return 0; // Error al registrar el usuario
         }
+    }
+    public int iniciarSesion(String usuario, char[] contrasenia) {
+        //Retornamos 0 si falla la consulta
+        int estado = 0;
+            ModeloUsuarios modeloUsuariosSesion = new ModeloUsuarios();
+            modeloUsuariosSesion.setUsuario(usuario);
+            this.consultasUsuario = new ConsultasUsuario();
+            if (this.consultasUsuario.leerSaltHash(modeloUsuariosSesion)) {
+                try {
+                    String hashVerificacion = generarHash(modeloUsuariosSesion.getSalt(), String.valueOf(contrasenia));
+                    if (hashVerificacion.equals(modeloUsuariosSesion.getHash())) {
+                        estado = 1;
+                        //Inicio de sesion exitoso
+                    } else {
+                        //Contraseñas no coinciden
+                        estado = 2;
+                    }
+                } catch (NoSuchAlgorithmException var6) {
+                    NoSuchAlgorithmException e = var6;
+                    throw new RuntimeException(e);
+                } catch (InvalidKeySpecException var7) {
+                    InvalidKeySpecException e = var7;
+                    throw new RuntimeException(e);
+                }
+            }
+        return estado;
+    }
+    public int verificarInicioSesion(JTextField txtUserName,JPasswordField txtContrasenia){
+        String textoUsuario = txtUserName.getText();//Recibimos el valor del Usuario
+        char[] contrasenia = txtContrasenia.getPassword();
+        if (txtUserName.getText().isEmpty()) {
+            // Campo de nombre de usuario vacío
+            return 2;
+        }
+        if (contrasenia.length==0) {
+            // Campo de contraseña vacia
+            return 2;
+        }
+        //Estas 2 verificaciones nos ahorran llamar a la DB
+        if (!verificarCaracteresUsuario(textoUsuario)|| textoUsuario.length()>LONGITUD_MAXIMA_USUARIO) {
+            // Usuario no válido
+            return 3;
+        }
+        if (!verificarContraseniaSegura(contrasenia)) {
+            // Contraseña no segura
+            return 4;
+        }
+        ControladorUsuario controladorUsuario = new ControladorUsuario();
+        if (!controladorUsuario.verificarExisteUsuario(textoUsuario)) {
+            // El nombre de usuario NO EXISTE
+            return 5;
+        }
+        int estadoInicioSesion =iniciarSesion(textoUsuario, contrasenia);
+        // Registrar el usuario
+        return switch (estadoInicioSesion) {
+            case 1 -> 1; // Inicio de sesión exitoso
+            case 2 -> 6; // Contraseña incorrecta
+            default -> 0; // Error al iniciar sesión
+        };
     }
 }

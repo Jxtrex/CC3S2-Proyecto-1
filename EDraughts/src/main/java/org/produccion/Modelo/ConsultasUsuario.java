@@ -29,7 +29,12 @@ public class ConsultasUsuario extends ConexionSQL{
         }
         finally{
             try{
-                conexion.close();//Siempre cerramos la conexion
+                if(conexion!=null) {
+                    conexion.close();//Siempre cerramos la conexion
+                }
+                else{
+                    System.out.println("No se encuentra disponible la DB");
+                }
             }
             catch(SQLException e){
                 System.err.println(e);
@@ -67,7 +72,12 @@ public class ConsultasUsuario extends ConexionSQL{
         }
         finally{
             try{
-                conexion.close();//Siempre cerramos la conexion
+                if(conexion!=null) {
+                    conexion.close();//Siempre cerramos la conexion
+                }
+                else{
+                    System.out.println("No se encuentra disponible la DB");
+                }
             }
             catch(SQLException e){
                 System.err.println(e);
@@ -95,7 +105,13 @@ public class ConsultasUsuario extends ConexionSQL{
         }
         finally{
             try{
-                conexion.close();//Siempre cerramos la conexion
+                if(conexion!=null) {
+                    conexion.close();//Siempre cerramos la conexion
+
+                }
+                else{
+                    System.out.println("No se encuentra disponible la DB");
+                }
             }
             catch(SQLException e){
                 System.err.println(e);
