@@ -73,207 +73,220 @@ public class TableroForm extends JFrame{
 
 
     public TableroForm() {
+
         btnFicha1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha1.estado=pnlFicha1.estado*(-1);
 
             }
         });
         btnFicha2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha2.estado=pnlFicha2.estado*(-1);
 
             }
         });
         btnFicha3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha3.estado=pnlFicha3.estado*(-1);
 
             }
         });
         btnFicha4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha4.estado=pnlFicha4.estado*(-1);
 
             }
         });
         btnFicha5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha5.estado=pnlFicha5.estado*(-1);
 
             }
         });
         btnFicha6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha6.estado=pnlFicha6.estado*(-1);
 
             }
         });
         btnFicha7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha7.estado=pnlFicha7.estado*(-1);
 
             }
         });
         btnFicha8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha8.estado=pnlFicha8.estado*(-1);
 
             }
         });
         btnFicha9.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (pnlFicha9.estado == 1){
-                    pnlFicha9.estado = 2;
-                }else if(pnlFicha9.estado == 2){
-                    pnlFicha9.estado = 3;
-                }else if(pnlFicha9.estado == 3){
-                    pnlFicha9.estado = 4;
-                }else if(pnlFicha9.estado == 4){
-                    pnlFicha9.estado = 0;
-                }else if(pnlFicha9.estado == 0){
-                    pnlFicha9.estado = 1;
-                }
-
-
+                pnlFicha9.estado=pnlFicha9.estado*(-1);
             }
         });
         btnFicha10.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha10.estado=pnlFicha10.estado*(-1);
 
             }
         });
         btnFicha11.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha11.estado=pnlFicha11.estado*(-1);
 
             }
         });
         btnFicha12.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                pnlFicha12.estado=pnlFicha12.estado*(-1);
             }
         });
         btnFicha13.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
             }
         });
         btnFicha14.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
             }
         });
         btnFicha15.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
             }
         });
         btnFicha16.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha1.estado=pnlFicha1.estado*(-1);
 
             }
         });
         btnFicha17.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha1.estado=pnlFicha1.estado*(-1);
 
             }
         });
         btnFicha18.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha1.estado=pnlFicha1.estado*(-1);
 
             }
         });
         btnFicha19.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha1.estado=pnlFicha1.estado*(-1);
 
             }
         });
         btnFicha20.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha1.estado=pnlFicha1.estado*(-1);
 
             }
         });
         btnFicha21.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha21.estado=pnlFicha21.estado*(-1);
 
             }
         });
         btnFicha22.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha22.estado=pnlFicha22.estado*(-1);
 
             }
         });
         btnFicha23.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha23.estado=pnlFicha23.estado*(-1);
 
             }
         });
         btnFicha24.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha24.estado=pnlFicha24.estado*(-1);
 
             }
         });
         btnFicha25.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha25.estado=pnlFicha25.estado*(-1);
 
             }
         });
         btnFicha26.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha26.estado=pnlFicha26.estado*(-1);
 
             }
         });
         btnFicha27.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha27.estado=pnlFicha27.estado*(-1);
 
             }
         });
         btnFicha28.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha28.estado=pnlFicha28.estado*(-1);
 
             }
         });
         btnFicha29.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha29.estado=pnlFicha29.estado*(-1);
 
             }
         });
         btnFicha30.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha30.estado=pnlFicha30.estado*(-1);
 
             }
         });
         btnFicha31.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha31.estado=pnlFicha31.estado*(-1);
 
             }
         });
         btnFicha32.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnlFicha32.estado=pnlFicha32.estado*(-1);
 
             }
         });
@@ -283,18 +296,18 @@ public class TableroForm extends JFrame{
         // TODO: place custom component creation code here
         panelTablero = new PanelFondoTablero();
 
-        pnlFicha1 = new PanelFichas(1);
-        pnlFicha2 = new PanelFichas(1);
-        pnlFicha3 = new PanelFichas(1);
-        pnlFicha4 = new PanelFichas(1);
-        pnlFicha5 = new PanelFichas(1);
-        pnlFicha6 = new PanelFichas(1);
-        pnlFicha7 = new PanelFichas(1);
-        pnlFicha8 = new PanelFichas(1);
-        pnlFicha9 = new PanelFichas(1);
-        pnlFicha10 = new PanelFichas(1);
-        pnlFicha11 = new PanelFichas(1);
-        pnlFicha12 = new PanelFichas(1);
+        pnlFicha1 = new PanelFichas(2);
+        pnlFicha2 = new PanelFichas(2);
+        pnlFicha3 = new PanelFichas(2);
+        pnlFicha4 = new PanelFichas(2);
+        pnlFicha5 = new PanelFichas(2);
+        pnlFicha6 = new PanelFichas(2);
+        pnlFicha7 = new PanelFichas(2);
+        pnlFicha8 = new PanelFichas(2);
+        pnlFicha9 = new PanelFichas(2);
+        pnlFicha10 = new PanelFichas(2);
+        pnlFicha11 = new PanelFichas(2);
+        pnlFicha12 = new PanelFichas(2);
         pnlFicha13 = new PanelFichas(0);
         pnlFicha14 = new PanelFichas(0);
         pnlFicha15 = new PanelFichas(0);
@@ -303,18 +316,18 @@ public class TableroForm extends JFrame{
         pnlFicha18 = new PanelFichas(0);
         pnlFicha19 = new PanelFichas(0);
         pnlFicha20 = new PanelFichas(0);
-        pnlFicha21 = new PanelFichas(2);
-        pnlFicha22 = new PanelFichas(2);
-        pnlFicha23 = new PanelFichas(2);
-        pnlFicha24 = new PanelFichas(2);
-        pnlFicha25 = new PanelFichas(2);
-        pnlFicha26 = new PanelFichas(2);
-        pnlFicha27 = new PanelFichas(2);
-        pnlFicha28 = new PanelFichas(2);
-        pnlFicha29 = new PanelFichas(2);
-        pnlFicha30 = new PanelFichas(2);
-        pnlFicha31 = new PanelFichas(2);
-        pnlFicha32 = new PanelFichas(2);
+        pnlFicha21 = new PanelFichas(1);
+        pnlFicha22 = new PanelFichas(1);
+        pnlFicha23 = new PanelFichas(1);
+        pnlFicha24 = new PanelFichas(1);
+        pnlFicha25 = new PanelFichas(1);
+        pnlFicha26 = new PanelFichas(1);
+        pnlFicha27 = new PanelFichas(1);
+        pnlFicha28 = new PanelFichas(1);
+        pnlFicha29 = new PanelFichas(1);
+        pnlFicha30 = new PanelFichas(1);
+        pnlFicha31 = new PanelFichas(1);
+        pnlFicha32 = new PanelFichas(1);
 
 
     }
