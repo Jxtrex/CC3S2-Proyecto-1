@@ -1,5 +1,7 @@
 package org.produccion.Visual.Tablero;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.*;
 
 public class TableroForm extends JFrame{
@@ -37,6 +39,15 @@ public class TableroForm extends JFrame{
     private PanelFichas pnlFicha31;
     private PanelFichas pnlFicha32;
     private JButton btnFicha1;
+
+    public TableroForm() {
+        pnlFicha25.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+            }
+        });
+    }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
