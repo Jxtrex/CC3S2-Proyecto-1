@@ -41,35 +41,6 @@ public class TableroForm extends JFrame{
     private JButton btnFicha1;
     private JButton btnFicha9;
     private JButton btnFicha5;
-    private JButton btnFicha2;
-    private JButton btnFicha3;
-    private JButton btnFicha4;
-    private JButton btnFicha6;
-    private JButton btnFicha7;
-    private JButton btnFicha8;
-    private JButton btnFichabtn10;
-    private JButton btnFicha11;
-    private JButton btnFicha12;
-    private JButton btnFicha13;
-    private JButton btnFicha14;
-    private JButton btnFicha15;
-    private JButton btnFicha16;
-    private JButton btnFicha17;
-    private JButton btnFicha18;
-    private JButton btnFicha19;
-    private JButton btnFicha20;
-    private JButton btnFicha21;
-    private JButton btnFicha22;
-    private JButton btnFicha23;
-    private JButton btnFicha24;
-    private JButton btnFicha25;
-    private JButton btnFicha26;
-    private JButton btnFicha27;
-    private JButton btnFicha28;
-    private JButton btnFicha29;
-    private JButton btnFicha30;
-    private JButton btnFicha31;
-    private JButton btnFicha32;
 
     public TableroForm() {
         btnFicha9.addActionListener(new ActionListener() {
