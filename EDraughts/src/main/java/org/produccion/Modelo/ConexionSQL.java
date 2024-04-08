@@ -31,5 +31,4 @@ public class ConexionSQL {
         }
         return connection;
     }
-
 }
