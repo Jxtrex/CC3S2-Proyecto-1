@@ -12,7 +12,7 @@ public class Casilla {
 
   private CellState cellState;
 
-  public Casilla(int xpos, int ypos, String STATE) {
+  public Casilla(int xpos, int ypos) {
     this.xpos = xpos;
     this.ypos = ypos;
     cellState = CellState.EMPTY;
@@ -20,6 +20,10 @@ public class Casilla {
 
   public CellState getSTATE() {
     return cellState;
+  }
+
+  public void setSTATE(CellState cellState){
+    this.cellState = cellState;
   }
 
   @Override
