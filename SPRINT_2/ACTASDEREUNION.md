@@ -1,0 +1,9 @@
+# ACTAS DE REUNION
+
+| Fecha | Tiempo y duración | Lugar | Nombres de los participantes | Propósito de la reunión | Elementos de acción específicos |
+| ----- | ----------------- | ----- | ---------------------------- | ----------------------- | ------------------------------- |
+|23/03/24 |3 horas|Videoconferencia|<ul><li>Joshua del Rosario</li><li>Gabriel Esteban Quiroz Gomez</li><li>Juan de Dios Lerzundi</li></ul>|Avance del Sprint1|<ul><li>Completar las historias de usuario y criterios de aceptación según la plantilla dada por el profesor</li><li>Planificación de los avances para la creación de cuentas de usuario y la interfaz del tablero</li></ul>|
+|03/04/24|15 minutos|En persona|<ul><li>Joshua del Rosario</li><li>Gabriel Esteban Quiroz Gomez</li><li>Juan de Dios Lerzundi</li></ul>|Distribución de las tareas de codificación|<ul><li>Repartir las partes del proyecto</li><li>Definir el editor visual de IntelliJ como herramienta para crear la GUI</li><li>Establecer la prioridad de cada tarea de codificación</li><li>Levantar los ánimos</li></ul>|
+|04/04/24|4 horas|Videoconferencia|<ul><li>Joshua del Rosario</li><li>Gabriel Esteban Quiroz Gomez</li><li>Juan de Dios Lerzundi</li></ul>|Reporte del Estado Inicial|<ul><li>Completar el acta</li><li>Definir historias de usuario</li><li>Definir criterios de aceptación</li><li>Planificar fechas límites para la codificación</li></ul>|
+|07/04/24|35 minutos|Videoconferencia|<ul><li>Joshua del Rosario</li><li>Gabriel Esteban Quiroz Gomez</li><li>Juan de Dios Lerzundi</li></ul>|Reporte de Proyecto|<ul><li>Implementar la base de datos</li><li>Crear la GUI base</li></ul>|
+|07/04/24|2 horas|Videoconferencia|<ul><li>Joshua del Rosario</li><li>Gabriel Esteban Quiroz Gomez</li><li>Juan de Dios Lerzundi</li></ul>|Creación de Pruebas|<ul><li>Pulir últimos detalles</li></ul>|

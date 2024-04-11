@@ -4,18 +4,18 @@
 | Nombre                | Apellidos     | Código    |
 | --------------------- | ------------- | --------- |
 | Juan de Dios Fernando | Lerzundi Ríos | 20191394C |
-| Joshua Jean Paul  | Del Rosario Sosa | 20191394C |
+| Joshua Jean Paul  | Del Rosario Sosa | 20162208K |
 | Gabriel Esteban  | Quiroz Gomez | 20191394C |
  
 ## Lista de Funciones del Programa:
-- [ ] Creación de Cuenta de Usuario:
-    - [ ] nombre
+- [X] Creación de Cuenta de Usuario:
+    - [X] nombre
     - [ ] email
-    - [ ] contraseña
-- [ ] Inicio de Sesión
+    - [X] contraseña
+- [X] Inicio de Sesión
 - [ ] Cierre de Sesión
 - [ ] Gameplay
-    - [ ] Colocación de fichas
+    - [X] Colocación de fichas
     - [ ] Movimientos de fichas
     - [ ] Implementación de reglas de juego 
 - [ ] Grabación del juego
