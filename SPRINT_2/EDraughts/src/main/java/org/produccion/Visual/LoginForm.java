@@ -1,7 +1,6 @@
 package org.produccion.Visual;
 
 import org.produccion.Controlador.ControladorUsuario;
-import org.produccion.Visual.Tablero.TableroForm;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -34,8 +33,8 @@ public class LoginForm extends JFrame{
                         // Inicio de sesión exitoso
                         JOptionPane.showMessageDialog(btnLogin,"Inicio de sesión exitoso");
                         fLogin.dispose();
-                        TableroForm tableroForm = new TableroForm();
-                        tableroForm.setConfig();
+                        GUI GUI = new GUI();
+//                        GUI.setConfig();
 
                         break;
                     case 2:
