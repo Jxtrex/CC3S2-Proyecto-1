@@ -14,6 +14,9 @@ public class GUI extends JFrame {
   private JPanel panelMain;
 
   public GUI() {
+    //POSICIÓN REAL DEL TABLERO SIN LOS BORDES ESTÉTICOS
+    // x0 = 13, y0 = 12; x1 = 393, y0 = 12
+    // x0 = 13, y1 = 388; x1 = 393, y1 = 388
     Insets insets = this.getInsets();
     int addedWidth = insets.left + insets.right;
     int addedHeight = insets.top + insets.bottom;
@@ -36,7 +39,7 @@ public class GUI extends JFrame {
   class Lienzo extends JPanel {
 
     Lienzo() {
-      setPreferredSize(new Dimension(407,403));
+      setPreferredSize(new Dimension(407, 403));
 //              try {
 //                Image image = ImageIO.read(super.getClass().getResource("/recursos/Imagenes/FichaNegra.png"));
 //              }catch (Exception e)
@@ -60,30 +63,40 @@ public class GUI extends JFrame {
     @Override
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
-      setBackground(Color.YELLOW);
-//      drawGridLines(g);
+//      setBackground(Color.YELLOW);
+      drawGridLines(g);
     }
 
     @Override
     public void paint(Graphics g) {
 
-      g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(),0,0, null);
-      g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 210, 210,75,75, this);
+      g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
+      g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 210, 210, 75, 75,
+          this);
       setOpaque(false);
       super.paint(g);
-      g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 320, 320,75,75, this);
+      g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 320, 320, 75, 75,
+          this);
       super.paint(g);
     }
 
     private void drawGridLines(Graphics g) {
-      g.setColor(Color.BLACK);
-      for (int row = 1; row < 8; ++row) {
-        g.fillRoundRect(0, 80 * row - 4,
-            640 - 1, 8, 8, 8);
+//      g.setColor(Color.CYAN);
+      //REGLA VERTICAL PARA MEDIR LOS BORDES DEL TABLERO
+//      g.drawLine(13,0,13,400);
+//      g.drawLine(393,0,393,400);
+
+      g.setColor(Color.MAGENTA);
+      //REGLA HORIZONTAL PARA MEDIR LOS BORDES DEL TABLERO
+//      g.drawLine(0,12,400,12);
+//      g.drawLine(0,388,400,388);
+      for (int row = 0; row <= 8; ++row) {
+//        g.fillRoundRect(0, 80 * row - 4, 640 - 1, 8, 8, 8);
+        g.drawLine(13, 12 + 47 * row, 393, 12 + 47 * row);
       }
-      for (int col = 1; col < 8; ++col) {
-        g.fillRoundRect(80 * col - 4, 0,
-            8, 640 - 1, 8, 8);
+      for (int col = 0; col <= 8; ++col) {
+//        g.fillRoundRect(80 * col - 4, 0, 8, 640 - 1, 8, 8);
+        g.drawLine(13 + 47 * col, 12, 13 + 47 * col, 388);
       }
 
     }
