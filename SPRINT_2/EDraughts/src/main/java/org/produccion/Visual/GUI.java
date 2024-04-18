@@ -14,24 +14,23 @@ public class GUI extends JFrame {
   private JPanel panelMain;
 
   public GUI() {
-    //POSICIÓN REAL DEL TABLERO SIN LOS BORDES ESTÉTICOS
+    //POSICIÓN DE LAS 4 ESQUINAS DEL TABLERO SIN LOS BORDES ESTÉTICOS
     // x0 = 13, y0 = 12; x1 = 393, y0 = 12
     // x0 = 13, y1 = 388; x1 = 393, y1 = 388
     Insets insets = this.getInsets();
     int addedWidth = insets.left + insets.right;
     int addedHeight = insets.top + insets.bottom;
 
-    final int HEIGHT = 403 + addedHeight;
-    final int WIDTH = 407 + addedWidth;
+//    final int HEIGHT = 403 + addedHeight;
+//    final int WIDTH = 406 + addedWidth;
 
     Lienzo lienzo = new Lienzo();
     this.setContentPane(lienzo);
-    this.pack();
+    this.pack(); //Ajusta la ventan a su componente más pequeño
     this.setTitle("E-Draughts");
 //    this.setSize(WIDTH, HEIGHT);
     this.setResizable(false);
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-//    this.pack();
     this.setVisible(true);
     //fLogin.dispose();//Cierra solo la ventana
   }
@@ -39,22 +38,17 @@ public class GUI extends JFrame {
   class Lienzo extends JPanel {
 
     Lienzo() {
-      setPreferredSize(new Dimension(407, 403));
-//              try {
-//                Image image = ImageIO.read(super.getClass().getResource("/recursos/Imagenes/FichaNegra.png"));
-//              }catch (Exception e)
-//              {
-//                System.err.println("Error reading file.");
-//                System.exit(1);
-//              }
-      ImageIcon imageIcon = new ImageIcon("resources/Imagenes/FichaNegra.png");
-      add(new JLabel(imageIcon));
-      repaint();
+      setPreferredSize(new Dimension(404, 403));
       addMouseListener(new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
           int rowSelected = e.getY();
           int colSelected = e.getX();
-          System.out.println("X: " + colSelected + " Y: " + rowSelected + "\n");
+          System.out.println("X: " + colSelected + " Y: " + rowSelected);
+          if (rowSelected >= 12 && rowSelected <= 388 && colSelected >= 13 && colSelected <= 393) {
+            System.out.println(
+                "ESTAS EN LA CASILLA: [" + (colSelected - 13) / 47 + "][" + (rowSelected - 12) / 47
+                    + "]");
+          }
           //          repaint();
         }
       });
@@ -71,12 +65,16 @@ public class GUI extends JFrame {
     public void paint(Graphics g) {
 
       g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
-      g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 210, 210, 75, 75,
-          this);
+      for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+          g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 18 + i * 47,
+              16 + j * 47, 40, 40, this);
+        }
+      }
+
       setOpaque(false);
       super.paint(g);
-      g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 320, 320, 75, 75,
-          this);
+//      g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 320, 320, 75, 75,this);
       super.paint(g);
     }
 
