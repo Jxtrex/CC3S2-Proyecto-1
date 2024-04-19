@@ -40,10 +40,10 @@ public class GUI extends JFrame {
     }
 
     @Override
-    public void paint(Graphics g) {
+    protected void paintComponent(Graphics g) {
+      super.paintComponent(g);
       g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
       setOpaque(false);
-      super.paint(g);
     }
   }
 
@@ -78,12 +78,12 @@ public class GUI extends JFrame {
     @Override
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
+      initboard(g);
       drawGridLines(g);
 //      drawDraughts(g);
     }
 
-    @Override
-    public void paint(Graphics g) {
+    public void initboard(Graphics g) {
       for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
           g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 18 + i * 47,
@@ -91,17 +91,17 @@ public class GUI extends JFrame {
         }
       }
       setOpaque(false);
-      super.paint(g);
     }
 
+
+    //FIXME No funciona y no sé por qué
     private void drawDraughts(Graphics g) {
       for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
           Celda celda = tablero.getCelda(i, j);
-          g.drawImage(getResource(celda), 18 + i * 47, 16 + j * 47, 40, 40, this);
+          g.drawImage(getResource(celda), 18 + i * 47, 16 + j * 47, 40, 40, null);
         }
       }
-      super.paint(g);
     }
 
     private void drawGridLines(Graphics g) {
