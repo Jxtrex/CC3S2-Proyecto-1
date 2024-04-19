@@ -3,15 +3,34 @@ package org.produccion.Visual;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.ImageObserver;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import org.produccion.Modelo.Tablero;
+import org.produccion.Modelo.Tablero.Celda;
 
 public class GUI extends JFrame {
 
   private JPanel panelMain;
+  private Lienzo lienzo = new Lienzo();
+  private Fichas fichas = new Fichas();
+
+  private Tablero tablero;
+
+  public GUI(Tablero tablero) {
+    //POSICIÓN DE LAS 4 ESQUINAS DEL TABLERO SIN LOS BORDES ESTÉTICOS
+    // x0 = 13, y0 = 12; x1 = 393, y0 = 12
+    // x0 = 13, y1 = 388; x1 = 393, y1 = 388
+    this.tablero = tablero;
+    lienzo.add(fichas);
+    this.setContentPane(lienzo);
+    this.setResizable(false);
+    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    this.pack(); //Ajusta la ventana su componente más pequeño
+    this.setTitle("E-Draughts");
+    this.setVisible(true);
+  }
 
   class Lienzo extends JPanel {
 
@@ -26,22 +45,6 @@ public class GUI extends JFrame {
       setOpaque(false);
       super.paint(g);
     }
-  }
-
-  public GUI() {
-    //POSICIÓN DE LAS 4 ESQUINAS DEL TABLERO SIN LOS BORDES ESTÉTICOS
-    // x0 = 13, y0 = 12; x1 = 393, y0 = 12
-    // x0 = 13, y1 = 388; x1 = 393, y1 = 388
-
-    Lienzo lienzo = new Lienzo();
-    Fichas fichas = new Fichas();
-    lienzo.add(fichas);
-    this.setContentPane(lienzo);
-    this.pack(); //Ajusta la ventana su componente más pequeño
-    this.setTitle("E-Draughts");
-    this.setResizable(false);
-    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    this.setVisible(true);
   }
 
   class Fichas extends JPanel {
@@ -63,6 +66,10 @@ public class GUI extends JFrame {
                 "ESTAS EN LA CASILLA: [" + (colSelected - 13) / 47 + "][" +
                     (rowSelected - 12) / 47 + "]");
           }
+
+          tablero.flipCelda(cellRow, cellCol);
+          System.out.println(tablero.toString());
+          repaint();
         }
       });
 
@@ -72,13 +79,14 @@ public class GUI extends JFrame {
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
       drawGridLines(g);
+//      drawDraughts(g);
     }
 
     @Override
     public void paint(Graphics g) {
       for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
-          g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 18 + i * 47,
+          g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 18 + i * 47,
               16 + j * 47, 40, 40, this);
         }
       }
@@ -86,32 +94,13 @@ public class GUI extends JFrame {
       super.paint(g);
     }
 
-    private void drawDraught(String tipoDeFicha, Graphics g, int x, int y,
-        int width, int height,
-        ImageObserver observer) {
-      String url = new String();
-      switch (temp++) {
-        case 0:
-          url = "recursos/Imagenes/FichaNegra.png";
-        case 1:
-          url = "recursos/Imagenes/FichaRoja.png";
-        case 2:
-          url = "recursos/Imagenes/FichaReinaNegra.png";
-        case 3:
-          url = "recursos/Imagenes/FichaReinaRoja.png";
+    private void drawDraughts(Graphics g) {
+      for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+          Celda celda = tablero.getCelda(i, j);
+          g.drawImage(getResource(celda), 18 + i * 47, 16 + j * 47, 40, 40, this);
+        }
       }
-//      switch (tipoDeFicha) {
-//        case "negra":
-//          url = "recursos/Imagenes/FichaNegra.png";
-//        case "roja":
-//          url = "recursos/Imagenes/FichaRoja.png";
-//        case "reina negra":
-//          url = "recursos/Imagenes/FichaReinaNegra.png";
-//        case "reina roja ":
-//          url = "recursos/Imagenes/FichaReinaRoja.png";
-//      }
-      Image image = new ImageIcon("recursos/Imagenes/FichaNegra.png").getImage();
-      g.drawImage(image, x, y, width, height, observer);
       super.paint(g);
     }
 
@@ -135,10 +124,33 @@ public class GUI extends JFrame {
     }
   }
 
+  private Image getResource(Celda tipoDeFicha) {
+    String url = new String();
+
+    switch (tipoDeFicha) {
+      case NEGRA:
+        url = "recursos/Imagenes/FichaNegra.png";
+        break;
+      case ROJA:
+        url = "recursos/Imagenes/FichaRoja.png";
+        break;
+      case REINANEGRA:
+        url = "recursos/Imagenes/FichaReinaNegra.png";
+        break;
+      case REINAROJA:
+        url = "recursos/Imagenes/FichaReinaRoja.png";
+        break;
+      default:
+        url = "";
+        break;
+    }
+    return (new ImageIcon(url)).getImage();
+  }
+
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        (new GUI()).setVisible(true);
+        new GUI(new Tablero());
       }
     });
   }
