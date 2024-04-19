@@ -3,10 +3,9 @@ package org.produccion.Visual;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.ImageObserver;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -15,10 +14,12 @@ public class GUI extends JFrame {
   private JPanel panelMain;
 
   class Lienzo extends JPanel {
+
     Lienzo() {
       setPreferredSize(new Dimension(404, 403));
       setLayout(null);
     }
+
     @Override
     public void paint(Graphics g) {
       g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
@@ -44,21 +45,29 @@ public class GUI extends JFrame {
   }
 
   class Fichas extends JPanel {
+
+    int temp = 0;
+
     Fichas() {
       setBounds(0, 0, 404, 403);
       addMouseListener(new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
           int rowSelected = e.getY();
           int colSelected = e.getX();
+
+          int cellRow = (rowSelected - 12) / 47;
+          int cellCol = (colSelected - 13) / 47;
           System.out.println("X: " + colSelected + " Y: " + rowSelected);
           if (rowSelected >= 12 && rowSelected <= 388 && colSelected >= 13 && colSelected <= 393) {
             System.out.println(
-                "ESTAS EN LA CASILLA: [" + (colSelected - 13) / 47 + "][" + (rowSelected - 12) / 47
-                    + "]");
+                "ESTAS EN LA CASILLA: [" + (colSelected - 13) / 47 + "][" +
+                    (rowSelected - 12) / 47 + "]");
           }
         }
       });
+
     }
+
     @Override
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
@@ -67,8 +76,6 @@ public class GUI extends JFrame {
 
     @Override
     public void paint(Graphics g) {
-
-//      g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
       for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
           g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 18 + i * 47,
@@ -77,30 +84,54 @@ public class GUI extends JFrame {
       }
       setOpaque(false);
       super.paint(g);
-//      g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 320, 320, 75, 75,this);
+    }
+
+    private void drawDraught(String tipoDeFicha, Graphics g, int x, int y,
+        int width, int height,
+        ImageObserver observer) {
+      String url = new String();
+      switch (temp++) {
+        case 0:
+          url = "recursos/Imagenes/FichaNegra.png";
+        case 1:
+          url = "recursos/Imagenes/FichaRoja.png";
+        case 2:
+          url = "recursos/Imagenes/FichaReinaNegra.png";
+        case 3:
+          url = "recursos/Imagenes/FichaReinaRoja.png";
+      }
+//      switch (tipoDeFicha) {
+//        case "negra":
+//          url = "recursos/Imagenes/FichaNegra.png";
+//        case "roja":
+//          url = "recursos/Imagenes/FichaRoja.png";
+//        case "reina negra":
+//          url = "recursos/Imagenes/FichaReinaNegra.png";
+//        case "reina roja ":
+//          url = "recursos/Imagenes/FichaReinaRoja.png";
+//      }
+      Image image = new ImageIcon("recursos/Imagenes/FichaNegra.png").getImage();
+      g.drawImage(image, x, y, width, height, observer);
+      super.paint(g);
     }
 
     private void drawGridLines(Graphics g) {
-//      g.setColor(Color.CYAN);
-      //REGLA VERTICAL PARA MEDIR LOS BORDES DEL TABLERO
-//      g.drawLine(13,0,13,400);
-//      g.drawLine(393,0,393,400);
-
       g.setColor(Color.MAGENTA);
-      //REGLA HORIZONTAL PARA MEDIR LOS BORDES DEL TABLERO
-//      g.drawLine(0,12,400,12);
-//      g.drawLine(0,388,400,388);
       for (int row = 0; row <= 8; ++row) {
-//        g.fillRoundRect(0, 80 * row - 4, 640 - 1, 8, 8, 8);
         g.drawLine(13, 12 + 47 * row, 393, 12 + 47 * row);
-//        g.drawLine(13, 47 * row, 393, 47 * row);
       }
       for (int col = 0; col <= 8; ++col) {
-//        g.fillRoundRect(80 * col - 4, 0, 8, 640 - 1, 8, 8);
         g.drawLine(13 + 47 * col, 12, 13 + 47 * col, 388);
-//        g.drawLine(13 + 47 * col, 0, 13 + 47 * col, 388);
       }
+    }
 
+    private void drawRulers(Graphics g) {
+      //REGLA VERTICAL PARA MEDIR LOS BORDES DEL TABLERO
+      g.drawLine(13, 0, 13, 400);
+      g.drawLine(393, 0, 393, 400);
+      //REGLA HORIZONTAL PARA MEDIR LOS BORDES DEL TABLERO
+      g.drawLine(0, 12, 400, 12);
+      g.drawLine(0, 388, 400, 388);
     }
   }
 
