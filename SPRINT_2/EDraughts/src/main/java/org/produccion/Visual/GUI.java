@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -13,32 +14,38 @@ public class GUI extends JFrame {
 
   private JPanel panelMain;
 
+  class Lienzo extends JPanel {
+    Lienzo() {
+      setPreferredSize(new Dimension(404, 403));
+      setLayout(null);
+    }
+    @Override
+    public void paint(Graphics g) {
+      g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
+      setOpaque(false);
+      super.paint(g);
+    }
+  }
+
   public GUI() {
     //POSICIÓN DE LAS 4 ESQUINAS DEL TABLERO SIN LOS BORDES ESTÉTICOS
     // x0 = 13, y0 = 12; x1 = 393, y0 = 12
     // x0 = 13, y1 = 388; x1 = 393, y1 = 388
-    Insets insets = this.getInsets();
-    int addedWidth = insets.left + insets.right;
-    int addedHeight = insets.top + insets.bottom;
-
-//    final int HEIGHT = 403 + addedHeight;
-//    final int WIDTH = 406 + addedWidth;
 
     Lienzo lienzo = new Lienzo();
+    Fichas fichas = new Fichas();
+    lienzo.add(fichas);
     this.setContentPane(lienzo);
-    this.pack(); //Ajusta la ventan a su componente más pequeño
+    this.pack(); //Ajusta la ventana su componente más pequeño
     this.setTitle("E-Draughts");
-//    this.setSize(WIDTH, HEIGHT);
     this.setResizable(false);
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     this.setVisible(true);
-    //fLogin.dispose();//Cierra solo la ventana
   }
 
-  class Lienzo extends JPanel {
-
-    Lienzo() {
-      setPreferredSize(new Dimension(404, 403));
+  class Fichas extends JPanel {
+    Fichas() {
+      setBounds(0, 0, 404, 403);
       addMouseListener(new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
           int rowSelected = e.getY();
@@ -49,33 +56,28 @@ public class GUI extends JFrame {
                 "ESTAS EN LA CASILLA: [" + (colSelected - 13) / 47 + "][" + (rowSelected - 12) / 47
                     + "]");
           }
-          //          repaint();
         }
       });
     }
-
     @Override
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
-//      setBackground(Color.YELLOW);
       drawGridLines(g);
     }
 
     @Override
     public void paint(Graphics g) {
 
-      g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
+//      g.drawImage((new ImageIcon("recursos/Imagenes/Tablero.png")).getImage(), 0, 0, null);
       for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
           g.drawImage((new ImageIcon("recursos/Imagenes/FichaNegra.png")).getImage(), 18 + i * 47,
               16 + j * 47, 40, 40, this);
         }
       }
-
       setOpaque(false);
       super.paint(g);
 //      g.drawImage((new ImageIcon("recursos/Imagenes/FichaRoja.png")).getImage(), 320, 320, 75, 75,this);
-      super.paint(g);
     }
 
     private void drawGridLines(Graphics g) {
@@ -91,23 +93,21 @@ public class GUI extends JFrame {
       for (int row = 0; row <= 8; ++row) {
 //        g.fillRoundRect(0, 80 * row - 4, 640 - 1, 8, 8, 8);
         g.drawLine(13, 12 + 47 * row, 393, 12 + 47 * row);
+//        g.drawLine(13, 47 * row, 393, 47 * row);
       }
       for (int col = 0; col <= 8; ++col) {
 //        g.fillRoundRect(80 * col - 4, 0, 8, 640 - 1, 8, 8);
         g.drawLine(13 + 47 * col, 12, 13 + 47 * col, 388);
+//        g.drawLine(13 + 47 * col, 0, 13 + 47 * col, 388);
       }
 
-    }
-
-    private void drawSomething(Image image, int dx, int dy, Graphics2D graphics2D) {
-      graphics2D.drawImage(image, 320, 320, 40, 40, null);
     }
   }
 
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new GUI();
+        (new GUI()).setVisible(true);
       }
     });
   }
