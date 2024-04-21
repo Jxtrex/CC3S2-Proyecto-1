@@ -2,7 +2,10 @@ package org.produccion.Controlador;
 
 import org.produccion.Modelo.Casilla;
 import org.produccion.Modelo.Tablero1;
+import org.produccion.Visual.Tablero.PanelFichas;
+import org.produccion.Visual.Tablero.TableroForm;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -13,7 +16,9 @@ public class Partida extends Thread{
   private ArrayList<int[]> FichasP2pos = new ArrayList<>(); // Lista de int[2] que contiene las posiciones de las fichas del jugador 2
 
   public int[] fichaSeleccionada; // cambiar a private después de verificar
-  public int[] fichaSeleccionadaTablero; //Contiene la posición de la ficha seleccionada en el tablero.
+
+  public PanelFichas panelFichaSeleccionadaTablero; //Contiene el panel de la ficha seleccionada en el tablero.
+  public int[] posFichaSeleccionadaTablero; //Contiene la posición de la ficha seleccionada en el tablero.
   private ArrayList<int[]> FMD= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las fichas con movimiento disponible
   private ArrayList<int[]> CD= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las casillas disponibles para colocar
   // la ficha seleccionada, o las posiciones de las capturas disponibles(fichas del oponente).
@@ -23,13 +28,16 @@ public class Partida extends Thread{
 
   private boolean corona;
 
-  public Partida(){
+  TableroForm tableroForm;
+
+  public Partida(TableroForm tableroForm){
     colocarFichas(1,1); // Coloca las fichas del jugador 1 desde la perspectiva del jugador 1
     colocarFichas(2,1); // Coloca las fichas del jugador 2 desde la perspectiva del jugador 1
 
     imprimirFichas(1);
     imprimirFichas(2);
 
+    this.tableroForm=tableroForm;
 
   /*
     System.out.println("\nEmpieza la partida!!!");
@@ -622,7 +630,7 @@ public class Partida extends Thread{
     }
 
   }
-  private void moverFichaSeleccionada(int i, int j,int P){
+  private void moverFichaSeleccionada(int i, int j,int P){ // (i,j) posición de la casilla objetivo
     corona=false;
 
     System.out.println("\nFicha seleccionada movida a la casilla:");
@@ -641,6 +649,10 @@ public class Partida extends Thread{
         }
       }
 
+      //Actualizamos la casilla del tableroForm
+      tableroForm.setPanelFicha(4*(7-i)+j/2,P+(isKing? 2 : 0));
+      tableroForm.repaint();
+
       //Actualiza FichasP1pos
       int ind=-1;
       for(int k=0;k<FichasP1pos.size();k++){
@@ -657,6 +669,10 @@ public class Partida extends Thread{
       tablero.placeDraugth(fichaSeleccionada[0], fichaSeleccionada[1], Casilla.CellState.EMPTY);
       tablero.getCasilla(fichaSeleccionada[0], fichaSeleccionada[1]).setKing(false);
 
+      //Limpia casilla del tableroForm
+      tableroForm.setPanelFicha(4*(7-fichaSeleccionada[0])+fichaSeleccionada[1]/2,-1);
+      tableroForm.repaint();
+
 
       //Actualiza la ficha seleccionada
       fichaSeleccionada= new int[]{i, j};
@@ -664,7 +680,7 @@ public class Partida extends Thread{
     }
 
     if(P==2){
-      boolean isKing=tablero.getCasilla(fichaSeleccionada[0],fichaSeleccionada[1]).isKing();
+      boolean isKing=tablero.getCasilla(fichaSeleccionada[0],fichaSeleccionada[1]).isKing(); // ficha seleccionada is king?
 
       //Coloco el estado de la ficha seleccionada a la celda indicada
       tablero.placeDraugth(i,j, Casilla.CellState.RED);
@@ -674,6 +690,10 @@ public class Partida extends Thread{
           corona=true; // si la ficha no era Rey entonces se corona
           System.out.println("La ficha se corona!\n");}
       }
+
+      //Actualizamos la casilla del tableroForm
+      tableroForm.setPanelFicha(4*(7-i)+j/2,P+(isKing? 2 : 0));
+      tableroForm.repaint();
 
       //Actualiza FichasP2pos
       int ind=-1;
@@ -691,6 +711,9 @@ public class Partida extends Thread{
       tablero.placeDraugth(fichaSeleccionada[0], fichaSeleccionada[1], Casilla.CellState.EMPTY);
       tablero.getCasilla(fichaSeleccionada[0], fichaSeleccionada[1]).setKing(false);
 
+      //Limpia casilla del tableroForm
+      tableroForm.setPanelFicha(4*(7-fichaSeleccionada[0])+fichaSeleccionada[1]/2,-1);
+      tableroForm.repaint();
 
       //Actualiza la ficha seleccionada
       fichaSeleccionada= new int[]{i, j};
@@ -723,6 +746,10 @@ public class Partida extends Thread{
       tablero.placeDraugth(i, j, Casilla.CellState.EMPTY);
       tablero.getCasilla(i, j).setKing(false);
 
+      //Limpia casilla del tableroForm
+      tableroForm.setPanelFicha(4*(7-i)+j/2,-1);
+      tableroForm.repaint();
+
     }
     if(P==2){
 
@@ -747,6 +774,10 @@ public class Partida extends Thread{
       tablero.placeDraugth(i, j, Casilla.CellState.EMPTY);
       tablero.getCasilla(i, j).setKing(false);
 
+      //Limpia casilla del tableroForm
+      tableroForm.setPanelFicha(4*(7-i)+j/2,-1);
+      tableroForm.repaint();
+
     }
 
 
@@ -765,7 +796,7 @@ public class Partida extends Thread{
 
     if(Turno==1){
       synchronized (this) { //Analizar , entender bien y explicar esto!!!
-        while (fichaSeleccionadaTablero==null) {
+        while (posFichaSeleccionadaTablero ==null) {
           try {
             // El hilo espera hasta que se cumpla la condición
             wait();
@@ -776,9 +807,9 @@ public class Partida extends Thread{
         // Aquí se ejecuta el código una vez que se cumple la condición
         //System.out.println("Se seleccionó una ficha y se salió del while");
       }
-      posicion[0]=fichaSeleccionadaTablero[0];
-      posicion[1]=fichaSeleccionadaTablero[1];
-      fichaSeleccionadaTablero=null;
+      posicion[0]= posFichaSeleccionadaTablero[0];
+      posicion[1]= posFichaSeleccionadaTablero[1];
+      posFichaSeleccionadaTablero =null;
 
     }else {
       Scanner sc = new Scanner(System.in); //Se crea el lector

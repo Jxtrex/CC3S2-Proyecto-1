@@ -73,10 +73,49 @@ public class TableroForm extends JFrame{
     private JButton btnFicha31;
     private JButton btnFicha32;
 
-    Partida partida = new Partida();
+    Partida partida = new Partida(this);
+    PanelFichas [] panelFicha= new PanelFichas[32];
+    PanelFichas [] fichasSeleccionadas= new PanelFichas[]{null,null};
+
+    int estadoFichaSeleccionada;
 
 
     public TableroForm() {
+
+        panelFicha[0] = pnlFicha1;
+        panelFicha[1] = pnlFicha2;
+        panelFicha[2] = pnlFicha3;
+        panelFicha[3] = pnlFicha4;
+        panelFicha[4] = pnlFicha5;
+        panelFicha[5] = pnlFicha6;
+        panelFicha[6] = pnlFicha7;
+        panelFicha[7] = pnlFicha8;
+        panelFicha[8] = pnlFicha9;
+        panelFicha[9] = pnlFicha10;
+        panelFicha[10] = pnlFicha11;
+        panelFicha[11] = pnlFicha12;
+        panelFicha[12] = pnlFicha13;
+        panelFicha[13] = pnlFicha14;
+        panelFicha[14] = pnlFicha15;
+        panelFicha[15] = pnlFicha16;
+        panelFicha[16] = pnlFicha17;
+        panelFicha[17] = pnlFicha18;
+        panelFicha[18] = pnlFicha19;
+        panelFicha[19] = pnlFicha20;
+        panelFicha[20] = pnlFicha21;
+        panelFicha[21] = pnlFicha22;
+        panelFicha[22] = pnlFicha23;
+        panelFicha[23] = pnlFicha24;
+        panelFicha[24] = pnlFicha25;
+        panelFicha[25] = pnlFicha26;
+        panelFicha[26] = pnlFicha27;
+        panelFicha[27] = pnlFicha28;
+        panelFicha[28] = pnlFicha29;
+        panelFicha[29] = pnlFicha30;
+        panelFicha[30] = pnlFicha31;
+        panelFicha[31] = pnlFicha32;
+
+
 
         partida.start();
 
@@ -333,16 +372,16 @@ public class TableroForm extends JFrame{
         // TODO: place custom component creation code here
         panelTablero = new PanelFondoTablero();
 
-         pnlFicha1 = new PanelFichas(1,0);
-         pnlFicha2 = new PanelFichas(1,1);
-         pnlFicha3 = new PanelFichas(1,2);
-         pnlFicha4 = new PanelFichas(1,3);
-         pnlFicha5 = new PanelFichas(1,4);
-         pnlFicha6 = new PanelFichas(1,5);
-         pnlFicha7 = new PanelFichas(1,6);
-         pnlFicha8 = new PanelFichas(1,7);
-         pnlFicha9 = new PanelFichas(1,8);
-        pnlFicha10 = new PanelFichas(1,9);
+          pnlFicha1 = new PanelFichas(1,0);
+          pnlFicha2 = new PanelFichas(1,1);
+          pnlFicha3 = new PanelFichas(1,2);
+          pnlFicha4 = new PanelFichas(1,3);
+          pnlFicha5 = new PanelFichas(1,4);
+          pnlFicha6 = new PanelFichas(1,5);
+          pnlFicha7 = new PanelFichas(1,6);
+          pnlFicha8 = new PanelFichas(1,7);
+          pnlFicha9 = new PanelFichas(1,8);
+         pnlFicha10 = new PanelFichas(1,9);
         pnlFicha11 = new PanelFichas(1,10);
         pnlFicha12 = new PanelFichas(1,11);
         pnlFicha13 = new PanelFichas(0,12);
@@ -392,18 +431,28 @@ public class TableroForm extends JFrame{
 
         if(partida.Turno==1){
             //partida.juega(partida.Turno,x,y);
-            partida.fichaSeleccionadaTablero =new int[]{x,y}; //Envia la ficha seleccionada en el tablero a la clase partida
-            partida.notificarSelección();
+            partida.panelFichaSeleccionadaTablero=panel;
+            partida.posFichaSeleccionadaTablero =new int[]{x,y}; //Envia la ficha seleccionada en el tablero a la clase partida
+            partida.notificarSelección(); // Notifica que ya se seleccionó una ficha
 
         }
 
+/*
         System.out.println("Se ha clickeado la ficha:"+Partida.traducirParOrdenadoString(x,y));
         if(partida.fichaSeleccionada!=null){
             int i= partida.fichaSeleccionada[0];
             int j= partida.fichaSeleccionada[1];
+
+            estadoFichaSeleccionada=panel.estado;
             System.out.println("Ficha seleccionada en la clase partida:"+Partida.traducirParOrdenadoString(i,j));
+            System.out.println("Estado de la Ficha seleccionada:"+estadoFichaSeleccionada);
         }else{System.out.println("Ficha seleccionada en la clase partida: Nada");}
+        */
 
 
+    }
+
+    public void setPanelFicha(int nroPanel,int estado){
+        panelFicha[nroPanel].estado=estado;
     }
 }
