@@ -15,9 +15,7 @@ public class Partida extends Thread{
   private ArrayList<int[]> FichasP1pos = new ArrayList<>(); // Lista de int[2] que contiene las posiciones de las fichas del jugador 1
   private ArrayList<int[]> FichasP2pos = new ArrayList<>(); // Lista de int[2] que contiene las posiciones de las fichas del jugador 2
 
-  public int[] fichaSeleccionada; // cambiar a private después de verificar
-
-  public PanelFichas panelFichaSeleccionadaTablero; //Contiene el panel de la ficha seleccionada en el tablero.
+  private int[] fichaSeleccionada; ////Contiene la posición de la ficha seleccionada correctamente
   public int[] posFichaSeleccionadaTablero; //Contiene la posición de la ficha seleccionada en el tablero.
   private ArrayList<int[]> FMD= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las fichas con movimiento disponible
   private ArrayList<int[]> CD= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las casillas disponibles para colocar
@@ -38,16 +36,6 @@ public class Partida extends Thread{
     imprimirFichas(2);
 
     this.tableroForm=tableroForm;
-
-  /*
-    System.out.println("\nEmpieza la partida!!!");
-    Turno = 1;
-
-    System.out.println("\nTurno del jugador "+Turno+":");
-    */
-
-    //juega(Turno);
-
   }
 
   protected void imprimirFichas(int P) {
@@ -642,16 +630,21 @@ public class Partida extends Thread{
       //Coloco el estado de la ficha seleccionada a la celda indicada
       tablero.placeDraugth(i,j, Casilla.CellState.BLACK);
       // Se asigna si es rey o no
-      if(isKing || i==0){tablero.getCasilla(i,j).setKing(true);
+      if(isKing || i==0){tablero.getCasilla(i,j).setKing(true); // Si la ficha anterior era Rey o el jugador llega a la frontera superior
         if(!isKing){
           corona=true;// si la ficha no era Rey entonces se corona
           System.out.println("La ficha se corona!\n");
         }
-      }
 
-      //Actualizamos la casilla del tableroForm
-      tableroForm.setPanelFicha(4*(7-i)+j/2,P+(isKing? 2 : 0));
-      tableroForm.repaint();
+        //Actualizamos la casilla del tableroForm colocando la ficha como Rey
+        tableroForm.setPanelFicha(4*(7-i)+j/2,P+2);
+        tableroForm.repaint();
+
+      }else{
+        //Actualizamos la casilla del tableroForm colocando la ficha normal
+        tableroForm.setPanelFicha(4*(7-i)+j/2,P);
+        tableroForm.repaint();
+      }
 
       //Actualiza FichasP1pos
       int ind=-1;
@@ -685,15 +678,19 @@ public class Partida extends Thread{
       //Coloco el estado de la ficha seleccionada a la celda indicada
       tablero.placeDraugth(i,j, Casilla.CellState.RED);
       // Se asigna si es rey o no
-      if(isKing || i==7){tablero.getCasilla(i,j).setKing(true);
-        if(!isKing){ // si la ficha no era Rey entonces se corona
+      if(isKing || i==7){tablero.getCasilla(i,j).setKing(true);// Si la ficha anterior era Rey o el jugador llega a la frontera inferior
+        if(!isKing){
           corona=true; // si la ficha no era Rey entonces se corona
           System.out.println("La ficha se corona!\n");}
-      }
 
-      //Actualizamos la casilla del tableroForm
-      tableroForm.setPanelFicha(4*(7-i)+j/2,P+(isKing? 2 : 0));
-      tableroForm.repaint();
+        //Actualizamos la casilla del tableroForm colocando la ficha como Rey
+        tableroForm.setPanelFicha(4*(7-i)+j/2,P+2);
+        tableroForm.repaint();
+      }else{
+        //Actualizamos la casilla del tableroForm colocando la ficha normal
+        tableroForm.setPanelFicha(4*(7-i)+j/2,P);
+        tableroForm.repaint();
+      }
 
       //Actualiza FichasP2pos
       int ind=-1;
@@ -793,7 +790,8 @@ public class Partida extends Thread{
 
   private int[] obtenerPosiciónVálida(){
     int [] posicion={-1,-1};
-
+    /*
+  // ---------- Entrada del jugador 2 por teclado - Entrada del jugador 1 por clicks ----------------
     if(Turno==1){
       synchronized (this) { //Analizar , entender bien y explicar esto!!!
         while (posFichaSeleccionadaTablero ==null) {
@@ -818,6 +816,44 @@ public class Partida extends Thread{
       String posicionString = sc.nextLine(); //Se lee la posición con nextLine() que retorna un String con el dato
       posicion =Partida.traducirStringParOrdenado(posicionString); //traducimos el string a int[2]
     }
+    // ----------------------------------------------------------------------------
+    */
+
+    // ---------- Entrada de ambos jugadores por clicks ----------------
+    synchronized (this) { //Analizar , entender bien y explicar esto!!!
+      while (posFichaSeleccionadaTablero ==null) {
+        try {
+          // El hilo espera hasta que se cumpla la condición
+          wait();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+      // Aquí se ejecuta el código una vez que se cumple la condición
+      //System.out.println("Se seleccionó una ficha y se salió del while");
+    }
+    // ----------------------------------------------------------------------------
+
+    /*
+    // ---------- Entrada de ambos jugadores por teclado ----------------
+    Scanner sc = new Scanner(System.in); //Se crea el lector
+
+    /// Debemos verificar que la posición ingresada sea válida!!
+    String posicionString = sc.nextLine(); //Se lee la posición con nextLine() que retorna un String con el dato
+    posicion =Partida.traducirStringParOrdenado(posicionString); //traducimos el string a int[2]
+    // ----------------------------------------------------------------------------
+    */
+
+
+    posicion[0]= posFichaSeleccionadaTablero[0];
+    posicion[1]= posFichaSeleccionadaTablero[1];
+    posFichaSeleccionadaTablero =null;
+    // ----------------------------------------------------------------------------
+
+
+
+
+
 
     //int posicionInt = sc.nextInt();
     //int[] posicion = new int[]{posicionInt/10,posicionInt%10};

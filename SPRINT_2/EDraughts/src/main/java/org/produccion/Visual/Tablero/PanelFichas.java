@@ -9,9 +9,9 @@ public class PanelFichas extends JPanel {
 
     public int nroFicha;
 
-    public PanelFichas(int estado, int x){
+    public PanelFichas(int estado, int nroFicha){
         this.estado = estado;
-        this.nroFicha=x;
+        this.nroFicha=nroFicha;
     }
 /*
     public void setEstado(int estado) {
@@ -29,10 +29,10 @@ public class PanelFichas extends JPanel {
             url = "recursos/Imagenes/FichaRoja.png";
 
         } else if (estado==3){ // Reyna negra
-            url = "recursos/Imagenes/ReynaNegra.png" ;
+            url = "recursos/Imagenes/ReinaNegra.png" ;
 
         } else if (estado==4){ // Reyna roja
-            url = "recursos/Imagenes/ReynaRoja.png" ;
+            url = "recursos/Imagenes/ReinaRoja.png" ;
         }else {
             url = "" ;
         }

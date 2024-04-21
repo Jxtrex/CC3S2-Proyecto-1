@@ -20,16 +20,11 @@ public class EDraughtsMain {
         // para poder poder visualizar el Tablero  con el formato anterior
         TableroForm tableroForm = new TableroForm();
         tableroForm.setConfig();
-        // Usar el tablero como guia visual de la partida hasta poder implementarla con la GUI
-
+        // TableroForm es la GUI
         // Se volvió a agregar la clase Partida en la carpeta Controlador,
         // Y una nueva imagen "TableroMarcado.png" en la carpeta de Imagenes
-
-        //Ejecución de la partida
-        //Partida partida = new Partida();
-        // Ingresa las posiciones como en los siguientes ejemplos:  "A6" "G2"  "B8"
-        //System.out.println("Con esto verificamos que realmente la partida se cerró");
-
+        //Se proporcionan las entradas haciendo click en los botones
+        // o ingresando las posiciones por teclado como en los siguientes ejemplos:  "A6" "G2"  "B8"
 
     }
 }

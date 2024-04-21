@@ -75,11 +75,6 @@ public class TableroForm extends JFrame{
 
     Partida partida = new Partida(this);
     PanelFichas [] panelFicha= new PanelFichas[32];
-    PanelFichas [] fichasSeleccionadas= new PanelFichas[]{null,null};
-
-    int estadoFichaSeleccionada;
-
-
     public TableroForm() {
 
         panelFicha[0] = pnlFicha1;
@@ -114,7 +109,6 @@ public class TableroForm extends JFrame{
         panelFicha[29] = pnlFicha30;
         panelFicha[30] = pnlFicha31;
         panelFicha[31] = pnlFicha32;
-
 
 
         partida.start();
@@ -405,9 +399,6 @@ public class TableroForm extends JFrame{
         pnlFicha31 = new PanelFichas(2,30);
         pnlFicha32 = new PanelFichas(2,31);
 
-
-
-
     }
 
     public void setConfig(){
@@ -422,37 +413,22 @@ public class TableroForm extends JFrame{
 
     private void click(PanelFichas panel){
 
-        //System.out.println("Se ha clickeado la ficha:"+ panel.nroFicha);
-
+        //Traducimos el nroFicha del panel a un par ordenado (x,y)
         int x=7-panel.nroFicha/4;
         int y=2*(panel.nroFicha%4)+(panel.nroFicha/4)%2;
 
-        //System.out.println("Se ha clickeado la ficha:"+Partida.traducirParOrdenadoString(x,y));
 
-        if(partida.Turno==1){
-            //partida.juega(partida.Turno,x,y);
-            partida.panelFichaSeleccionadaTablero=panel;
+        //if(partida.Turno==1){ // Comentar para enviar las entradas por click en ambos turnos
+
             partida.posFichaSeleccionadaTablero =new int[]{x,y}; //Envia la ficha seleccionada en el tablero a la clase partida
             partida.notificarSelección(); // Notifica que ya se seleccionó una ficha
 
-        }
-
-/*
-        System.out.println("Se ha clickeado la ficha:"+Partida.traducirParOrdenadoString(x,y));
-        if(partida.fichaSeleccionada!=null){
-            int i= partida.fichaSeleccionada[0];
-            int j= partida.fichaSeleccionada[1];
-
-            estadoFichaSeleccionada=panel.estado;
-            System.out.println("Ficha seleccionada en la clase partida:"+Partida.traducirParOrdenadoString(i,j));
-            System.out.println("Estado de la Ficha seleccionada:"+estadoFichaSeleccionada);
-        }else{System.out.println("Ficha seleccionada en la clase partida: Nada");}
-        */
+        //}
 
 
     }
 
-    public void setPanelFicha(int nroPanel,int estado){
+    public void setPanelFicha(int nroPanel,int estado){ //Actualiza el estado del Panel con el número dado
         panelFicha[nroPanel].estado=estado;
     }
 }
