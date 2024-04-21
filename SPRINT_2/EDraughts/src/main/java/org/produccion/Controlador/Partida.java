@@ -7,18 +7,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Partida {
+public class Partida extends Thread{
   private Tablero1 tablero = new Tablero1(); //Crea un nuevo tablero vacío (Sin fichas).
   private ArrayList<int[]> FichasP1pos = new ArrayList<>(); // Lista de int[2] que contiene las posiciones de las fichas del jugador 1
   private ArrayList<int[]> FichasP2pos = new ArrayList<>(); // Lista de int[2] que contiene las posiciones de las fichas del jugador 2
 
-  private int[] fichaSeleccionada;
+  public int[] fichaSeleccionada; // cambiar a private después de verificar
+  public int[] fichaSeleccionadaTablero; //Contiene la posición de la ficha seleccionada en el tablero.
   private ArrayList<int[]> FMD= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las fichas con movimiento disponible
   private ArrayList<int[]> CD= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las casillas disponibles para colocar
   // la ficha seleccionada, o las posiciones de las capturas disponibles(fichas del oponente).
   private ArrayList<int[]> FPC= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las Fichas que Pueden Capturar
 
-  private int Turno;
+  public int Turno;
 
   private boolean corona;
 
@@ -29,10 +30,15 @@ public class Partida {
     imprimirFichas(1);
     imprimirFichas(2);
 
+
+  /*
     System.out.println("\nEmpieza la partida!!!");
     Turno = 1;
 
-    juega(Turno);
+    System.out.println("\nTurno del jugador "+Turno+":");
+    */
+
+    //juega(Turno);
 
   }
 
@@ -747,13 +753,40 @@ public class Partida {
 
   }
 
+
+  // Método para cambiar la condición
+  public synchronized void notificarSelección() {
+    // Notificar al hilo que la condición ha cambiado. Condición: fichaSeleccionadaTablero==null
+    notify();
+  }
+
   private int[] obtenerPosiciónVálida(){
-    Scanner sc = new Scanner(System.in); //Se crea el lector
+    int [] posicion={-1,-1};
 
-    /// Debemos verificar que la posición ingresada sea válida!!
+    if(Turno==1){
+      synchronized (this) { //Analizar , entender bien y explicar esto!!!
+        while (fichaSeleccionadaTablero==null) {
+          try {
+            // El hilo espera hasta que se cumpla la condición
+            wait();
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+        }
+        // Aquí se ejecuta el código una vez que se cumple la condición
+        //System.out.println("Se seleccionó una ficha y se salió del while");
+      }
+      posicion[0]=fichaSeleccionadaTablero[0];
+      posicion[1]=fichaSeleccionadaTablero[1];
+      fichaSeleccionadaTablero=null;
 
-    String posicionString = sc.nextLine(); //Se lee la posición con nextLine() que retorna un String con el dato
-    int [] posicion =Partida.traducirStringParOrdenado(posicionString); //traducimos el string a int[2]
+    }else {
+      Scanner sc = new Scanner(System.in); //Se crea el lector
+
+      /// Debemos verificar que la posición ingresada sea válida!!
+      String posicionString = sc.nextLine(); //Se lee la posición con nextLine() que retorna un String con el dato
+      posicion =Partida.traducirStringParOrdenado(posicionString); //traducimos el string a int[2]
+    }
 
     //int posicionInt = sc.nextInt();
     //int[] posicion = new int[]{posicionInt/10,posicionInt%10};
@@ -872,7 +905,7 @@ public class Partida {
     }else{Turno=1;} // Si el turno es de P2, entonces se cambia al turno de P1
   }
 
-  private void juega(int P){
+  public void juega(int P){
     int[] posicion; // se crea un array que guardará la posición que introduciremos en las funciones.
 
     //if(P==1){
@@ -1008,6 +1041,13 @@ public class Partida {
     int y= s.charAt(0)-65;
     int x= 8-s.charAt(1)+'0';
     return new int[]{x,y};
+  }
+
+  @Override
+  public void run(){
+    System.out.println("\nEmpieza la partida!!!");
+    Turno = 1;
+    juega(Turno);
   }
 
 }

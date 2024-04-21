@@ -7,8 +7,11 @@ public class PanelFichas extends JPanel {
     private ImageIcon imagen;
     public int estado;
 
-    public PanelFichas(int estado){
+    public int nroFicha;
+
+    public PanelFichas(int estado, int x){
         this.estado = estado;
+        this.nroFicha=x;
     }
 /*
     public void setEstado(int estado) {

@@ -1,5 +1,7 @@
 package org.produccion.Visual.Tablero;
 
+import org.produccion.Controlador.Partida;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -71,21 +73,25 @@ public class TableroForm extends JFrame{
     private JButton btnFicha31;
     private JButton btnFicha32;
 
+    Partida partida = new Partida();
+
 
     public TableroForm() {
+
+        partida.start();
 
         btnFicha1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha1.estado=pnlFicha1.estado*(-1);
-                cambio(pnlFicha1);
+                click(pnlFicha1);
             }
         });
         btnFicha2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha2.estado=pnlFicha2.estado*(-1);
-                cambio(pnlFicha2);
+                click(pnlFicha2);
 
             }
         });
@@ -93,7 +99,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha3.estado=pnlFicha3.estado*(-1);
-                cambio(pnlFicha3);
+                click(pnlFicha3);
 
             }
         });
@@ -101,7 +107,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha4.estado=pnlFicha4.estado*(-1);
-                cambio(pnlFicha4);
+                click(pnlFicha4);
 
             }
         });
@@ -109,7 +115,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha5.estado=pnlFicha5.estado*(-1);
-                cambio(pnlFicha5);
+                click(pnlFicha5);
 
             }
         });
@@ -117,7 +123,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha6.estado=pnlFicha6.estado*(-1);
-                cambio(pnlFicha6);
+                click(pnlFicha6);
 
             }
         });
@@ -125,7 +131,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha7.estado=pnlFicha7.estado*(-1);
-                cambio(pnlFicha7);
+                click(pnlFicha7);
 
             }
         });
@@ -133,7 +139,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha8.estado=pnlFicha8.estado*(-1);
-                cambio(pnlFicha8);
+                click(pnlFicha8);
 
             }
         });
@@ -141,14 +147,14 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha9.estado=pnlFicha9.estado*(-1);
-                cambio(pnlFicha9);
+                click(pnlFicha9);
             }
         });
         btnFicha10.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha10.estado=pnlFicha10.estado*(-1);
-                cambio(pnlFicha10);
+                click(pnlFicha10);
 
             }
         });
@@ -156,7 +162,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha11.estado=pnlFicha11.estado*(-1);
-                cambio(pnlFicha11);
+                click(pnlFicha11);
 
             }
         });
@@ -164,30 +170,32 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha12.estado=pnlFicha12.estado*(-1);
-                cambio(pnlFicha12);
+                click(pnlFicha12);
             }
         });
         btnFicha13.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cambio(pnlFicha13);
+                click(pnlFicha13);
             }
         });
         btnFicha14.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {cambio(pnlFicha14);
+            public void actionPerformed(ActionEvent e) {
+                click(pnlFicha14);
             }
         });
         btnFicha15.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {cambio(pnlFicha15);
+            public void actionPerformed(ActionEvent e) {
+                click(pnlFicha15);
             }
         });
         btnFicha16.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha1.estado=pnlFicha1.estado*(-1);
-                cambio(pnlFicha16);
+                click(pnlFicha16);
 
             }
         });
@@ -195,7 +203,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha1.estado=pnlFicha1.estado*(-1);
-                cambio(pnlFicha17);
+                click(pnlFicha17);
 
             }
         });
@@ -203,7 +211,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha1.estado=pnlFicha1.estado*(-1);
-                cambio(pnlFicha18);
+                click(pnlFicha18);
 
             }
         });
@@ -211,7 +219,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha1.estado=pnlFicha1.estado*(-1);
-                cambio(pnlFicha19);
+                click(pnlFicha19);
 
             }
         });
@@ -219,7 +227,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha1.estado=pnlFicha1.estado*(-1);
-                cambio(pnlFicha20);
+                click(pnlFicha20);
 
             }
         });
@@ -227,7 +235,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha21.estado=pnlFicha21.estado*(-1);
-                cambio(pnlFicha21);
+                click(pnlFicha21);
 
             }
         });
@@ -235,7 +243,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha22.estado=pnlFicha22.estado*(-1);
-                cambio(pnlFicha22);
+                click(pnlFicha22);
 
             }
         });
@@ -243,7 +251,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha23.estado=pnlFicha23.estado*(-1);
-                cambio(pnlFicha23);
+                click(pnlFicha23);
 
             }
         });
@@ -251,7 +259,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha24.estado=pnlFicha24.estado*(-1);
-                cambio(pnlFicha24);
+                click(pnlFicha24);
 
             }
         });
@@ -259,7 +267,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha25.estado=pnlFicha25.estado*(-1);
-                cambio(pnlFicha25);
+                click(pnlFicha25);
 
             }
         });
@@ -267,7 +275,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha26.estado=pnlFicha26.estado*(-1);
-                cambio(pnlFicha26);
+                click(pnlFicha26);
 
             }
         });
@@ -275,7 +283,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha27.estado=pnlFicha27.estado*(-1);
-                cambio(pnlFicha27);
+                click(pnlFicha27);
 
             }
         });
@@ -283,7 +291,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha28.estado=pnlFicha28.estado*(-1);
-                cambio(pnlFicha28);
+                click(pnlFicha28);
 
             }
         });
@@ -291,7 +299,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha29.estado=pnlFicha29.estado*(-1);
-                cambio(pnlFicha29);
+                click(pnlFicha29);
 
             }
         });
@@ -299,7 +307,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha30.estado=pnlFicha30.estado*(-1);
-                cambio(pnlFicha30);
+                click(pnlFicha30);
 
             }
         });
@@ -307,7 +315,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha31.estado=pnlFicha31.estado*(-1);
-                cambio(pnlFicha31);
+                click(pnlFicha31);
 
             }
         });
@@ -315,7 +323,7 @@ public class TableroForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //pnlFicha32.estado=pnlFicha32.estado*(-1);
-                cambio(pnlFicha32);
+                click(pnlFicha32);
 
             }
         });
@@ -325,38 +333,40 @@ public class TableroForm extends JFrame{
         // TODO: place custom component creation code here
         panelTablero = new PanelFondoTablero();
 
-        pnlFicha1 = new PanelFichas(1);
-        pnlFicha2 = new PanelFichas(1);
-        pnlFicha3 = new PanelFichas(1);
-        pnlFicha4 = new PanelFichas(1);
-        pnlFicha5 = new PanelFichas(1);
-        pnlFicha6 = new PanelFichas(1);
-        pnlFicha7 = new PanelFichas(1);
-        pnlFicha8 = new PanelFichas(1);
-        pnlFicha9 = new PanelFichas(1);
-        pnlFicha10 = new PanelFichas(1);
-        pnlFicha11 = new PanelFichas(1);
-        pnlFicha12 = new PanelFichas(1);
-        pnlFicha13 = new PanelFichas(0);
-        pnlFicha14 = new PanelFichas(0);
-        pnlFicha15 = new PanelFichas(0);
-        pnlFicha16 = new PanelFichas(0);
-        pnlFicha17 = new PanelFichas(0);
-        pnlFicha18 = new PanelFichas(0);
-        pnlFicha19 = new PanelFichas(0);
-        pnlFicha20 = new PanelFichas(0);
-        pnlFicha21 = new PanelFichas(2);
-        pnlFicha22 = new PanelFichas(2);
-        pnlFicha23 = new PanelFichas(2);
-        pnlFicha24 = new PanelFichas(2);
-        pnlFicha25 = new PanelFichas(2);
-        pnlFicha26 = new PanelFichas(2);
-        pnlFicha27 = new PanelFichas(2);
-        pnlFicha28 = new PanelFichas(2);
-        pnlFicha29 = new PanelFichas(2);
-        pnlFicha30 = new PanelFichas(2);
-        pnlFicha31 = new PanelFichas(2);
-        pnlFicha32 = new PanelFichas(2);
+         pnlFicha1 = new PanelFichas(1,0);
+         pnlFicha2 = new PanelFichas(1,1);
+         pnlFicha3 = new PanelFichas(1,2);
+         pnlFicha4 = new PanelFichas(1,3);
+         pnlFicha5 = new PanelFichas(1,4);
+         pnlFicha6 = new PanelFichas(1,5);
+         pnlFicha7 = new PanelFichas(1,6);
+         pnlFicha8 = new PanelFichas(1,7);
+         pnlFicha9 = new PanelFichas(1,8);
+        pnlFicha10 = new PanelFichas(1,9);
+        pnlFicha11 = new PanelFichas(1,10);
+        pnlFicha12 = new PanelFichas(1,11);
+        pnlFicha13 = new PanelFichas(0,12);
+        pnlFicha14 = new PanelFichas(0,13);
+        pnlFicha15 = new PanelFichas(0,14);
+        pnlFicha16 = new PanelFichas(0,15);
+        pnlFicha17 = new PanelFichas(0,16);
+        pnlFicha18 = new PanelFichas(0,17);
+        pnlFicha19 = new PanelFichas(0,18);
+        pnlFicha20 = new PanelFichas(0,19);
+        pnlFicha21 = new PanelFichas(2,20);
+        pnlFicha22 = new PanelFichas(2,21);
+        pnlFicha23 = new PanelFichas(2,22);
+        pnlFicha24 = new PanelFichas(2,23);
+        pnlFicha25 = new PanelFichas(2,24);
+        pnlFicha26 = new PanelFichas(2,25);
+        pnlFicha27 = new PanelFichas(2,26);
+        pnlFicha28 = new PanelFichas(2,27);
+        pnlFicha29 = new PanelFichas(2,28);
+        pnlFicha30 = new PanelFichas(2,29);
+        pnlFicha31 = new PanelFichas(2,30);
+        pnlFicha32 = new PanelFichas(2,31);
+
+
 
 
     }
@@ -371,9 +381,29 @@ public class TableroForm extends JFrame{
         //fLogin.dispose();//Cierra solo la ventana
     }
 
-    private void cambio(PanelFichas panel){
-        if(panel.estado!=5){panel.estado=panel.estado+1;}else{panel.estado=1;}
+    private void click(PanelFichas panel){
 
-        //System.out.println("Avel que wea");
+        //System.out.println("Se ha clickeado la ficha:"+ panel.nroFicha);
+
+        int x=7-panel.nroFicha/4;
+        int y=2*(panel.nroFicha%4)+(panel.nroFicha/4)%2;
+
+        //System.out.println("Se ha clickeado la ficha:"+Partida.traducirParOrdenadoString(x,y));
+
+        if(partida.Turno==1){
+            //partida.juega(partida.Turno,x,y);
+            partida.fichaSeleccionadaTablero =new int[]{x,y}; //Envia la ficha seleccionada en el tablero a la clase partida
+            partida.notificarSelección();
+
+        }
+
+        System.out.println("Se ha clickeado la ficha:"+Partida.traducirParOrdenadoString(x,y));
+        if(partida.fichaSeleccionada!=null){
+            int i= partida.fichaSeleccionada[0];
+            int j= partida.fichaSeleccionada[1];
+            System.out.println("Ficha seleccionada en la clase partida:"+Partida.traducirParOrdenadoString(i,j));
+        }else{System.out.println("Ficha seleccionada en la clase partida: Nada");}
+
+
     }
 }

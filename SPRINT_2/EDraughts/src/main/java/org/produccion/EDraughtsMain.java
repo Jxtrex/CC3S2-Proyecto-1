@@ -26,9 +26,9 @@ public class EDraughtsMain {
         // Y una nueva imagen "TableroMarcado.png" en la carpeta de Imagenes
 
         //Ejecución de la partida
-        Partida partida = new Partida();
+        //Partida partida = new Partida();
         // Ingresa las posiciones como en los siguientes ejemplos:  "A6" "G2"  "B8"
-        System.out.println("Con esto verificamos que realmente la partida se cerró");
+        //System.out.println("Con esto verificamos que realmente la partida se cerró");
 
 
     }
