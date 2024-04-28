@@ -1,0 +1,12 @@
+
+Q	java:S125"<This block of commented-out lines of code should be removed.(Á„³ï
+Q	java:S125"<This block of commented-out lines of code should be removed.(ù˜é¦
+P	java:S125"<This block of commented-out lines of code should be removed.(åüªs
+Z
+java:S1128"?Remove this unused import 'org.produccion.Controlador.Partida'.(»Úƒêüÿÿÿÿ
+Q
+java:S1128"6Remove this unused import 'org.produccion.Visual.GUI'.(°«ˆõùÿÿÿÿ
+R
+java:S1128"<Remove this unused import 'org.produccion.Visual.LoginForm'.(•Ê¾»
+X
+java:S1128"=Remove this unused import 'org.produccion.Visual.PartidaGUI'.(Ê’Í£ùÿÿÿÿ

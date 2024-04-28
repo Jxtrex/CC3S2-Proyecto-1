@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TableroForm extends JFrame{
-    private JPanel panelTablero;
+    private JPanel pnlMesa;
     private PanelFichas pnlFicha1;
     private PanelFichas pnlFicha2;
     private PanelFichas pnlFicha3;
@@ -72,6 +72,7 @@ public class TableroForm extends JFrame{
     private JButton btnFicha30;
     private JButton btnFicha31;
     private JButton btnFicha32;
+    private JPanel pnlTablero;
 
     Partida partida = new Partida(this);
     PanelFichas [] panelFicha= new PanelFichas[32];
@@ -364,7 +365,7 @@ public class TableroForm extends JFrame{
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
-        panelTablero = new PanelFondoTablero();
+        pnlTablero = new PanelFondoTablero();
 
           pnlFicha1 = new PanelFichas(1,0);
           pnlFicha2 = new PanelFichas(1,1);
@@ -402,10 +403,11 @@ public class TableroForm extends JFrame{
     }
 
     public void setConfig(){
-        this.setContentPane(panelTablero);
+        this.setContentPane(pnlMesa);
         this.setTitle("E-Draughts");
-        this.setSize(650,648);
-        this.setResizable(false);
+        //this.setSize(650,648);
+        this.setSize(900,700);
+        this.setResizable(true);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         //fLogin.dispose();//Cierra solo la ventana

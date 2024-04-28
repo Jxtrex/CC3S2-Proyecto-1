@@ -22,72 +22,78 @@ public class Partida extends Thread{
   // la ficha seleccionada, o las posiciones de las capturas disponibles(fichas del oponente).
   private ArrayList<int[]> FPC= new ArrayList<>(); //Lista de int[2] que contiene las posiciones de las Fichas que Pueden Capturar
 
-  public int Turno;
+  public int Turno; // Indica el turno del jugador (1 o 2).
 
-  private boolean corona;
+  private boolean corona; //boolean que indica si la ficha corona
 
-  TableroForm tableroForm;
+  TableroForm tableroForm; // Referencia al formulario del tablero (Visual).
 
-  public Partida(TableroForm tableroForm){
+  public Partida(TableroForm tableroForm){ //Constructor de la partida// Recibe como parámetro al formulario del tablero.
     colocarFichas(1,1); // Coloca las fichas del jugador 1 desde la perspectiva del jugador 1
     colocarFichas(2,1); // Coloca las fichas del jugador 2 desde la perspectiva del jugador 1
 
-    imprimirFichas(1);
-    imprimirFichas(2);
+    imprimirFichas(1); //Muestra las fichas del jugador 1 en consola
+    imprimirFichas(2); //Muestra las fichas del jugador 2 en consola
 
     this.tableroForm=tableroForm;
   }
 
-  protected void imprimirFichas(int P) {
-    if (P == 1){
+  protected void imprimirFichas(int P) { //Muestra las fichas del jugador P en consola
+    if (P == 1){ // Si P es el jugador 1
       System.out.println("\nFichas del jugador 1:  " + FichasP1pos.size());
-      if(FichasP1pos.size()!=0) {
-        for (int i = 0; i < FichasP1pos.size(); i++) {
+      if(FichasP1pos.size()!=0) { // Si la lista no está vacía, entonces se imprime cada ficha.
+        for (int i = 0; i < FichasP1pos.size(); i++) { // Se recorre la lista de posiciones de las fichas del jugador 1
           System.out.println(tablero.getCasilla(FichasP1pos.get(i)[0], FichasP1pos.get(i)[1]));
         }
-      }else{System.out.println("No hay fichas del jugador 1 en el tablero.");}
+      }else{System.out.println("No hay fichas del jugador 1 en el tablero.");}// Si la lista está vacía...
   }
-    if (P == 2){
+    if (P == 2){// Si P es el jugador 2
       System.out.println("\nFichas del jugador 2:  " + FichasP2pos.size());
-      if(FichasP2pos.size()!=0) {
-        for (int i = 0; i < FichasP2pos.size(); i++) {
+      if(FichasP2pos.size()!=0) {// Si la lista no está vacía, entonces se imprime cada ficha.
+        for (int i = 0; i < FichasP2pos.size(); i++) { // Se recorre la lista de posiciones de las fichas del jugador 2
           System.out.println(tablero.getCasilla(FichasP2pos.get(i)[0], FichasP2pos.get(i)[1]));
         }
-      }else{System.out.println("No hay fichas del jugador 2 en el tablero.");}
+      }else{System.out.println("No hay fichas del jugador 2 en el tablero.");}// Si la lista está vacía...
     }
-
   }
   private void colocarFichas(int P,int VP){ // P : Jugador,   VP:  Vista del jugador
-    if(VP==1){
-      if(P==2){
-        for (int n=0; n<12; n++){
+    if(VP==1){ //Si la vista del tablero es del jugador 1
+      if(P==2){ //Las fichas del jugador 2 (Rojas) se colocan en la parte superior
+        for (int n=0; n<12; n++){ // Se recorren 12 fichas
+            //Se calcula los índices (i,j) de la posición de la ficha 'n'
           int i=n/4;
           int j=2*(n%4)+(1-i%2);
+          // Se coloca la ficha Roja en el tablero
           tablero.placeDraugth(i,j, Casilla.CellState.RED);
+          //Añadimos la posición de la ficha del jugador 2 a la lista de posiciones
           int [] posicion={i,j};
           FichasP2pos.add(posicion);
 
         }
-      }
-      if(P==1){
-        for (int n=20; n<32; n++){
+      }//Las fichas del jugador 1 (Negras) se colocan en la parte inferior
+      if(P==1){ //Las fichas del jugador 1 (Negras) se colocan en la parte inferior
+        for (int n=20; n<32; n++){ // Se recorren 12 fichas
+            //Se calcula los índices (i,j) de la posición de la ficha 'n'
           int i=n/4;
           int j=2*(n%4)+(1-i%2);
+            // Se coloca la ficha Negra en el tablero
           tablero.placeDraugth(i,j, Casilla.CellState.BLACK);
+            //Añadimos la posición de la ficha del jugador 1 a la lista de posiciones
           int [] posicion={i,j};
           FichasP1pos.add(posicion);
         }
       }
     }
 
-    if(VP==2){
-      if(P==1) {
-        for (int n = 0; n < 12; n++) {
+    if(VP==2){ //Si la vista del tablero es del jugador 2
+      if(P==1) {//Las fichas del jugador 1 (Negras) se colocan en la parte superior
+        for (int n = 0; n < 12; n++) {// Se recorren 12 fichas
           tablero.placeDraugth(n / 4, 2 * (n % 4) + (1 - (n / 4) % 2), Casilla.CellState.BLACK);
+
         }
       }
-      if(P==2) {
-        for (int n = 20; n < 32; n++) {
+      if(P==2) {//Las fichas del jugador 2 (Rojas) se colocan en la parte inferior
+        for (int n = 20; n < 32; n++) {// Se recorren 12 fichas
           tablero.placeDraugth(n / 4, 2 * (n % 4) + (1 - (n / 4) % 2), Casilla.CellState.RED);
         }
       }
@@ -95,7 +101,7 @@ public class Partida extends Thread{
   }
 
   private boolean getFPC(int P){ // Muestra las posiciones de las Fichas que Pueden Capturar
-    FPC.clear();
+    FPC.clear(); // Se limpia la lista FPC
     if(P==1){// Si es el turno del jugador 1
       System.out.println("\nFichas del jugador 1 que pueden capturar:");
       for (int[] fichaPos: FichasP1pos) { // Recorremos la lista de posiciones de las fichas del jugador 1
@@ -233,30 +239,33 @@ public class Partida extends Thread{
     }
   }
 
-  private boolean isInFPC(int[] posicion){// Verifica si la posicion está en FPC
-    for(int[] e : FPC ){
-      if(Arrays.equals(posicion,e)){return true;}
+  private boolean isInFPC(int[] posicion){// Verifica si la posicion ingresada está en FPC
+    for(int[] e : FPC ){ //Recorre la lista FPC
+      if(Arrays.equals(posicion,e)){return true;} //Si la posición ingresada es igual a alguna posición
+        // de la lista, entonces devuelve true
     }
-    return false;
+    return false;// Si ninguna posición en la lista coincide con la posición ingresada, devuelve false.
   }
 
   private boolean isInCD(int[] posicion){// Verifica si la posicion está en CD
-    for(int[] e : CD ){
-      if(Arrays.equals(posicion,e)){return true;}
+    for(int[] e : CD ){ //Recorre la lista CD
+      if(Arrays.equals(posicion,e)){return true;} //Si la posición ingresada es igual a alguna posición
+        // de la lista, entonces devuelve true
     }
-    return false;
+    return false; // Si ninguna posición en la lista coincide con la posición ingresada, devuelve false.
   }
 
   private boolean isInFMD(int[] posicion){ // Verifica si la posicion está en FMD
-    for(int[] e : FMD ){
-      if(Arrays.equals(posicion,e)){return true;}
+    for(int[] e : FMD ){ //Recorre la lista FMD
+      if(Arrays.equals(posicion,e)){return true;} //Si la posición ingresada es igual a alguna posición
+        // de la lista, entonces devuelve true
     }
-    return false;
+    return false; // Si ninguna posición en la lista coincide con la posición ingresada, devuelve false.
   }
 
 
   private boolean getFMD(int P){ // Muestra las posiciones de las Fichas con Movimientos Disponibles
-    FMD.clear();
+    FMD.clear(); //Limpia la lista FMD
 
     if(P==1){// Si es el turno del jugador 1
       System.out.println("\nFichas del jugador 1 con movimiento disponible:");
@@ -385,8 +394,9 @@ public class Partida extends Thread{
       return false;
     }
   }
-  private boolean seleccionarFichaDeMovimiento(int i, int j, int P){
-    CD.clear();
+  private boolean seleccionarFichaDeMovimiento(int i, int j, int P){ // Se selecciona una ficha para efectuar su movimiento y muestra todas las casillas disponibles para colocarla.
+
+    CD.clear(); // Limpia la lista CD
 
     fichaSeleccionada= new int[]{i, j};
 
@@ -793,7 +803,7 @@ public class Partida extends Thread{
     /*
   // ---------- Entrada del jugador 2 por teclado - Entrada del jugador 1 por clicks ----------------
     if(Turno==1){
-      synchronized (this) { //Analizar , entender bien y explicar esto!!!
+      synchronized (this) {
         while (posFichaSeleccionadaTablero ==null) {
           try {
             // El hilo espera hasta que se cumpla la condición
@@ -820,7 +830,7 @@ public class Partida extends Thread{
     */
 
     // ---------- Entrada de ambos jugadores por clicks ----------------
-    synchronized (this) { //Analizar , entender bien y explicar esto!!!
+    synchronized (this) {
       while (posFichaSeleccionadaTablero ==null) {
         try {
           // El hilo espera hasta que se cumpla la condición
@@ -851,10 +861,6 @@ public class Partida extends Thread{
     // ----------------------------------------------------------------------------
 
 
-
-
-
-
     //int posicionInt = sc.nextInt();
     //int[] posicion = new int[]{posicionInt/10,posicionInt%10};
 
@@ -865,7 +871,7 @@ public class Partida extends Thread{
       return obtenerPosiciónVálida();
     }
 
-  } /// Terminar!!
+  }
 
   private boolean isValid(int [] posicion){
     // Usar REGEX
@@ -895,6 +901,8 @@ public class Partida extends Thread{
   }
 
   private void MovimientoDeCapturaLegal(int P){
+    /* Una vez seleccionada la ficha capturadora, se muestra las fichas enemigas disponibles a capturar
+    * y nos pide seleccionar alguna para capturarla*/
     ////---------- Movimiento de captura con la ficha seleccionada ------------///////////
     System.out.println("\nIngrese la posición de la ficha que desea capturar:");
 
@@ -930,7 +938,7 @@ public class Partida extends Thread{
         System.out.println("\nFichas del jugador 1:  " + FichasP1pos.size());
         System.out.println("\nFichas del jugador 2:  " + FichasP2pos.size());
         juega(Turno);
-      }else{// Si hay más capturas, vuelve a iniciar el Moviemiento de captura con la ficha seleccionada
+      }else{// Si hay más capturas, vuelve a iniciar el Movimiento de captura con la ficha seleccionada
         // ***   vuelve a iniciar el Movimiento de captura con la ficha seleccionada
         MovimientoDeCapturaLegal(P);
       }
@@ -939,6 +947,9 @@ public class Partida extends Thread{
     //----------- Termina el Movimiento de captura con la ficha seleccionada --------------
   }
   private void MovimientoLegal(int P){
+    /*Una vez seleccionada la ficha para mover, se pide ingresar la posición de la casilla
+    donde deseamos colocarla.*/
+
     //------- Movimiento legal----------
 
     System.out.println("\nIngrese la posición de la casilla donde desea mover la ficha:");
@@ -987,62 +998,7 @@ public class Partida extends Thread{
 
         seleccionarFichaDeCaptura(posicion[0], posicion[1], P); // Seleccionamos la ficha de esa posición y mostramos las capturas disponibles
 
-        MovimientoDeCapturaLegal(P);
-        /*
-        ////---------- Movimiento de captura con la ficha seleccionada ------------///////////
-        System.out.println("\nIngrese la posición de la ficha que desea capturar:");
-
-        posicion= obtenerPosición(); //*****
-        //Verificaremos que la posición ingresada sea válida y se encuentre en la lista CD o FPC.
-
-        if(isInFPC(posicion))// Si la posición ingresada isValid(posicion) && isInFPC(posicion):
-        {
-          seleccionarFichaDeCaptura(posicion[0], posicion[1], P);
-        // ***   vuelve a iniciar el Movimiento de captura con la ficha seleccionada
-        }
-        else if(!isInCD(posicion)){//else , si la posición ingresada isValid(posicion) && !isInCD(posicion),
-          // Avisa que No se puede capturar la ficha de esa posición
-          System.out.println("Captura inválida!!");
-          // ***   vuelve a iniciar el Movimiento de captura con la ficha seleccionada
-        }
-        else if(isInCD(posicion)){//else , si la posición ingresada isValid(posicion) && isInCD(posicion),
-        //    entonces captura la ficha:
-          FPC=null;
-          capturarFicha(posicion[0], posicion[1], P);
-          //Verifica si la ficha se corona o si hay más capturas disponibles desde la ficha seleccionada
-          if(corona){// si la ficha se corona entonces termina la jugada
-            cambiarTurno();
-            //Verificamos la cantidad de fichas
-            System.out.println("\nFichas del jugador 1:  " + FichasP1pos.size());
-            System.out.println("\nFichas del jugador 2:  " + FichasP2pos.size());
-            juega(Turno);
-          }else if(!seleccionarFichaDeCaptura(fichaSeleccionada[0],fichaSeleccionada[1],P)){
-            // si ya no hay más capturas entonces termina la jugada
-            cambiarTurno();
-            //Verificamos la cantidad de fichas
-            System.out.println("\nFichas del jugador 1:  " + FichasP1pos.size());
-            System.out.println("\nFichas del jugador 2:  " + FichasP2pos.size());
-            juega(Turno);
-          }else{// Si hay más capturas, vuelve a iniciar el Moviemiento de captura con la ficha seleccionada
-            //System.out.println("Vuelve a iniciar el movim Captura");
-            // ***   vuelve a iniciar el Movimiento de captura con la ficha seleccionada
-          }
-        }
-
-        //----------- Termina el Movimiento de captura con la ficha seleccionada --------------
-        */
-        //???????
-        /*
-
-        //Si no hay más capturas disponibles
-        //Termina su jugada
-        cambiarTurno(); //Cambiamos el turno al jugador 2. (Turno=2)
-        //Verificamos la cantidad de fichas
-        System.out.println("\nFichas del jugador 1:  " + FichasP1pos.size());
-        System.out.println("\nFichas del jugador 2:  " + FichasP2pos.size());
-        juega(Turno);
-        */
-        ///???????
+        MovimientoDeCapturaLegal(P); //Iniciamos el movimiento de captura.
       }else {
         if(!getFMD(P)){
           System.out.println("Partida terminada!!!");
@@ -1055,39 +1011,14 @@ public class Partida extends Thread{
           posicion = obtenerPosiciónFMD(); //Nos aseguramos que la posición ingresada se encuentre en FMD
           seleccionarFichaDeMovimiento(posicion[0], posicion[1], P);
 
-          MovimientoLegal(P);
-          /*
-          //------- Movimiento legal----------
-
-          System.out.println("\nIngrese la posición de la casilla donde desea mover la ficha:");
-          posicion = obtenerPosiciónVálida();
-
-          //Verificaremos que la posición ingresada sea válida y se encuentre en la lista CD o FMD.
-
-          if(isInFMD(posicion))// Si la posición está en FMD:
-          {
-            seleccionarFichaDeMovimiento(posicion[0], posicion[1], P);
-            // ***   vuelve a iniciar el Movimiento legal
-          }
-          else if(!isInCD(posicion)){//else , si la posición ingresada NO está CD
-            // Avisa que No se puede capturar la ficha de esa posición
-            System.out.println("Movimiento inválido!! Asegúrate de ingresar una de las posiciones mostradas ...");
-            // ***   vuelve a iniciar el Movimiento legal
-          }
-          else if(isInCD(posicion)) {//else , si la posición ingresada está en CD
-            //    entonces mueve la ficha:
-            CD = null;
-            moverFichaSeleccionada(posicion[0], posicion[1], P);
-          }
-          //------- Termina el Movimiento legal----------
-          */
+          MovimientoLegal(P); // Se inicia el movimiento
 
           //Termina su jugada
           cambiarTurno(); //Cambiamos el turno al jugador 2. (Turno=2)
           //Verificamos la cantidad de fichas
           System.out.println("\nFichas del jugador 1:  " + FichasP1pos.size());
           System.out.println("\nFichas del jugador 2:  " + FichasP2pos.size());
-          juega(Turno);
+          juega(Turno); //Inicia la jugada del oponente.
         }
       }
 
@@ -1096,15 +1027,16 @@ public class Partida extends Thread{
   }
 
   public static String traducirParOrdenadoString(int x, int y){
+    //Se introduce un par ordenado (x,y) y devuelve un String en notación del juego. Ejm:  B6, C5,...
     String s="";
     char columna = (char) (65+y);
-    //System.out.println(value_char);
     s=s+columna+(8-x);
 
     return s;
   }
 
   public static int[] traducirStringParOrdenado(String s){
+    //Se introduce un String en notación del juego. Ejm:  B6, C5,... y devuelve un par ordenado (x,y)
     int y= s.charAt(0)-65;
     int x= 8-s.charAt(1)+'0';
     return new int[]{x,y};
