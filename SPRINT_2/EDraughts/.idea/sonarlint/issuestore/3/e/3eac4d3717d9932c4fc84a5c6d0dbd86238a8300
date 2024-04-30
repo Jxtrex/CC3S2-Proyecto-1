@@ -1,12 +1,15 @@
 
-Q	java:S125"<This block of commented-out lines of code should be removed.(Á„³ï
-Q	java:S125"<This block of commented-out lines of code should be removed.(ù˜é¦
-P	java:S125"<This block of commented-out lines of code should be removed.(åüªs
-Z
-java:S1128"?Remove this unused import 'org.produccion.Controlador.Partida'.(»Úƒêüÿÿÿÿ
-Q
-java:S1128"6Remove this unused import 'org.produccion.Visual.GUI'.(°«ˆõùÿÿÿÿ
-R
-java:S1128"<Remove this unused import 'org.produccion.Visual.LoginForm'.(•Ê¾»
-X
-java:S1128"=Remove this unused import 'org.produccion.Visual.PartidaGUI'.(Ê’Í£ùÿÿÿÿ
+~	java:S125"<This block of commented-out lines of code should be removed.(Á„³ï8ˆóƒó1J$c1af2bbb-6cdd-40d1-9f4c-c25e917f05e3
+~	java:S125"<This block of commented-out lines of code should be removed.(­ˆÏ„8í¥œ…ó1J$f00acb40-825a-47c3-bdaf-47c95bb0ac42
+w	java:S125"<This block of commented-out lines of code should be removed.(ù˜é¦J$dc2dcff7-c63b-4b2a-91ac-8f8493dd3485
+v	java:S125."<This block of commented-out lines of code should be removed.(åüªsJ$3774d871-67f8-4c38-8b30-6e731f2616d8
+‡
+java:S1128"?Remove this unused import 'org.produccion.Controlador.Partida'.(»Úƒêüÿÿÿÿ8•‚é…ó1J$36610270-e9e5-4aca-957e-47c15e3a757d
+~
+java:S1128"6Remove this unused import 'org.produccion.Visual.GUI'.(°«ˆõùÿÿÿÿ8–‚é…ó1J$14cac2cd-edc2-43a2-ba94-2dd3be4729f5
+
+java:S1128"<Remove this unused import 'org.produccion.Visual.LoginForm'.(•Ê¾»8—‚é…ó1J$2c8217cf-2bde-4d64-9689-5c1da1bfb7b3
+
+java:S1128"FRemove this unused import 'org.produccion.Visual.PantallaInicialForm'.(½—¿üÿÿÿÿ8˜‚é…ó1J$18e54094-421a-4b4f-af93-8df8d88e76ce
+…
+java:S1128"=Remove this unused import 'org.produccion.Visual.PartidaGUI'.(Ê’Í£ùÿÿÿÿ8™‚é…ó1J$5d438a57-cc59-46d6-a16c-6e531f89e4a1

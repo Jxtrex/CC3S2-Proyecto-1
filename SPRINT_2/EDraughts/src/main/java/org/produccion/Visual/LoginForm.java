@@ -33,6 +33,8 @@ public class LoginForm extends JFrame{
                         // Inicio de sesión exitoso
                         JOptionPane.showMessageDialog(btnLogin,"Inicio de sesión exitoso");
                         fLogin.dispose();
+                        PantallaInicialForm pantalla = new PantallaInicialForm(txtUserName.getText());
+                        pantalla.setConfig();
 //                        GUI GUI = new GUI();
 //                        GUI.setConfig();
 

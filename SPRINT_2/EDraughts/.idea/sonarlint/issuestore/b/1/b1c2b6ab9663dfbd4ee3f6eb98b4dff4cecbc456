@@ -1,0 +1,13 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(îºø ûÿÿÿÿ
+K
+java:S1068"0Remove this unused "tableroForm1" private field.(°›¾ñûÿÿÿÿ
+H
+java:S1068	"-Remove this unused "textPane1" private field.(°ø®ûÿÿÿÿ
+A
+java:S1068
+"+Remove this unused "button1" private field.(İ¢ÈÒ
+A
+java:S1068"+Remove this unused "button2" private field.(”µ±‘
+F
+java:S1068"+Remove this unused "button3" private field.(ÜõûÌúÿÿÿÿ

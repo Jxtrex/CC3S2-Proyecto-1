@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.produccion.Visual.OpcionesJugarForm">
+  <grid id="27dc6" binding="pnlMain" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="30">
+    <margin top="20" left="20" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-65612"/>
+      <maximumSize width="400" height="300"/>
+      <minimumSize width="400" height="300"/>
+    </properties>
+    <border type="line" title="   Jugar una partida   " title-justification="2" title-position="2"/>
+    <children>
+      <component id="9010b" class="javax.swing.JButton" binding="juegaLocalmenteButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Juega localmente"/>
+        </properties>
+      </component>
+      <component id="1a291" class="javax.swing.JButton" binding="juegaContraLaComputadoraButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Juega contra la computadora"/>
+        </properties>
+      </component>
+      <component id="2cecb" class="javax.swing.JButton" binding="btnCerrarSesión">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Cerrar sesión"/>
+        </properties>
+      </component>
+      <component id="e2fcf" class="javax.swing.JButton" binding="btnVolver">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="⭠ Volver"/>
+        </properties>
+      </component>
+      <component id="d685a" class="javax.swing.JButton" binding="juegaEnLíneaButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Juega en línea"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

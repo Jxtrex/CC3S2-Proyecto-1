@@ -1,5 +1,6 @@
 package org.produccion.Controlador;
 
+import org.junit.jupiter.api.Test;
 import org.produccion.Modelo.Casilla;
 import org.produccion.Modelo.Tablero1;
 import org.produccion.Visual.Tablero.PanelFichas;
@@ -25,6 +26,8 @@ public class Partida extends Thread{
   public int Turno; // Indica el turno del jugador (1 o 2).
 
   private boolean corona; //boolean que indica si la ficha corona
+
+  private String eDJ=""; // string Estado de juego que se imprimirá en el txtPanel
 
   TableroForm tableroForm; // Referencia al formulario del tablero (Visual).
 
@@ -102,8 +105,15 @@ public class Partida extends Thread{
 
   private boolean getFPC(int P){ // Muestra las posiciones de las Fichas que Pueden Capturar
     FPC.clear(); // Se limpia la lista FPC
+
     if(P==1){// Si es el turno del jugador 1
+
       System.out.println("\nFichas del jugador 1 que pueden capturar:");
+
+      // string Estado de juego que se imprimirá en el txtPanel
+      eDJ=eDJ+"Turno del Jugador 1";
+      eDJ=eDJ+"\nFichas que pueden capturar:"+"\n";
+
       for (int[] fichaPos: FichasP1pos) { // Recorremos la lista de posiciones de las fichas del jugador 1
         int i = fichaPos[0]; // Posicion X: nro de fila de la ficha
         int j = fichaPos[1]; // Posicion Y: nro de columna de la ficha
@@ -117,6 +127,9 @@ public class Partida extends Thread{
               // y la casilla subsiguiente (i-2, j-2) está vacía, entonces la ficha puede realizar una captura.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
               continue;
             }
           }
@@ -126,6 +139,8 @@ public class Partida extends Thread{
               // y la casilla subsiguiente (i-2, j+2) está vacía, entonces la ficha puede realizar una captura.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i, j));
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
               continue;
             }
           }
@@ -134,6 +149,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -142,6 +161,9 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
             }
           }
         } else { // Si la ficha no es rey, solo verificamos las casillas superiores (i-1)
@@ -152,6 +174,10 @@ public class Partida extends Thread{
               // y la casilla subsiguiente (i-2, j-2) está vacía, entonces la ficha puede realizar una captura.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -161,6 +187,10 @@ public class Partida extends Thread{
               // y la casilla subsiguiente (i-2, j+2) está vacía, entonces la ficha puede realizar una captura.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i, j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -170,6 +200,11 @@ public class Partida extends Thread{
     }
     if(P==2){// Si es el turno del jugador 2
       System.out.println("\nFichas del jugador 2 que pueden capturar:");
+
+      // string Estado de juego que se imprimirá en el txtPanel
+      eDJ=eDJ+"Turno del Jugador 2";
+      eDJ=eDJ+"\nFichas que pueden capturar:"+"\n";
+
       for (int[] fichaPos: FichasP2pos) { // Recorremos la lista de posiciones de las fichas del jugador 2
         int i = fichaPos[0]; // Posicion X: nro de fila de la ficha
         int j = fichaPos[1]; // Posicion Y: nro de columna de la ficha
@@ -183,6 +218,10 @@ public class Partida extends Thread{
               // y la casilla subsiguiente (i-2, j-2) está vacía, entonces la ficha puede realizar una captura.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -192,6 +231,10 @@ public class Partida extends Thread{
               // y la casilla subsiguiente (i-2, j+2) está vacía, entonces la ficha puede realizar una captura.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i, j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -200,6 +243,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -208,6 +255,9 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
             }
           }
         } else { // Si la ficha no es rey, solo verificamos las casillas inferiores (i+1)
@@ -216,6 +266,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -224,6 +278,9 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FPC.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
             }
           }
         }
@@ -269,6 +326,11 @@ public class Partida extends Thread{
 
     if(P==1){// Si es el turno del jugador 1
       System.out.println("\nFichas del jugador 1 con movimiento disponible:");
+
+      // string Estado de juego que se imprimirá en el txtPanel
+      eDJ=eDJ+"Turno del Jugador 1";
+      eDJ=eDJ+"\nFichas que se pueden mover:"+"\n";
+
       for (int[] fichaPos: FichasP1pos) { // Recorremos la lista de posiciones de las fichas del jugador 1
         int i = fichaPos[0]; // Posicion X: nro de fila de la ficha
         int j = fichaPos[1]; // Posicion Y: nro de columna de la ficha
@@ -280,6 +342,10 @@ public class Partida extends Thread{
               // Si la casilla superior(i-1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -288,6 +354,10 @@ public class Partida extends Thread{
               // Si la casilla superior(i-1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i, j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -296,6 +366,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -304,6 +378,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
             }
           }
         } else { // Si la ficha no es rey, solo verificamos las casillas superiores (i-1)
@@ -312,6 +390,10 @@ public class Partida extends Thread{
               // Si la casilla superior(i-1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -320,6 +402,10 @@ public class Partida extends Thread{
               // Si la casilla superior(i-1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i, j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -329,6 +415,11 @@ public class Partida extends Thread{
     }
     if(P==2){// Si es el turno del jugador 2
       System.out.println("\nFichas del jugador 2 con movimiento disponible:");
+
+      // string Estado de juego que se imprimirá en el txtPanel
+      eDJ=eDJ+"Turno del Jugador 2";
+      eDJ=eDJ+"\nFichas que se pueden mover:"+"\n";
+
       for (int[] fichaPos: FichasP2pos) { // Recorremos la lista de posiciones de las fichas del jugador 2
         int i = fichaPos[0]; // Posicion X: nro de fila de la ficha
         int j = fichaPos[1]; // Posicion Y: nro de columna de la ficha
@@ -340,6 +431,10 @@ public class Partida extends Thread{
               // Si la casilla superior(i-1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -348,6 +443,10 @@ public class Partida extends Thread{
               // Si la casilla superior(i-1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i, j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -356,6 +455,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -364,6 +467,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
             }
           }
         } else { // Si la ficha no es rey, solo verificamos las casillas inferiores (i+1)
@@ -372,6 +479,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) izquierda(j-1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
               continue;
             }
           }
@@ -380,6 +491,10 @@ public class Partida extends Thread{
               // Si la casilla inferior(i+1) derecha(j+1) está vacía, entonces la ficha tiene un movimiento disponible.
               FMD.add(fichaPos);
               System.out.println(tablero.getCasilla(i,j));
+
+              // string Estado de juego que se imprimirá en el txtPanel
+              eDJ=eDJ+tablero.getCasilla(i,j)+"\n";
+
             }
           }
         }
@@ -988,11 +1103,17 @@ public class Partida extends Thread{
 
     //if(P==1){
 
+      eDJ="";
+
       System.out.println("\nTurno del jugador "+P+":");
 
       //Empieza su jugada
 
       if(getFPC(P)){ // Si hay capturas disponibles, inicia el proceso de captura
+        // Escribimos en el panel de texto
+        tableroForm.setTextAreaEstadoDeJuego(eDJ);
+        eDJ="";
+
         System.out.println("\nIngrese la posición de la ficha que desee mover:");//Se pide ingresar la posición
         posicion= obtenerPosiciónFPC();// Nos aseguramos que la posición ingresada se encuentre en FPC
 
@@ -1000,12 +1121,18 @@ public class Partida extends Thread{
 
         MovimientoDeCapturaLegal(P); //Iniciamos el movimiento de captura.
       }else {
+        eDJ="";
+
         if(!getFMD(P)){
           System.out.println("Partida terminada!!!");
           if(P%2==1){
             System.out.println("Gana el Jugador 2!!!");
           }else{System.out.println("Gana el Jugador 1!!!!");}
         }else{
+
+          // Escribimos en el panel de texto
+          tableroForm.setTextAreaEstadoDeJuego(eDJ);
+          eDJ="";
 
           System.out.println("\nIngrese la posición de la ficha que desee mover:");//Se pide ingresar la posición
           posicion = obtenerPosiciónFMD(); //Nos aseguramos que la posición ingresada se encuentre en FMD

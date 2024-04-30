@@ -73,10 +73,26 @@ public class TableroForm extends JFrame{
     private JButton btnFicha31;
     private JButton btnFicha32;
     private JPanel pnlTablero;
+    private JPanel pnlOpciones;
+    private JPanel pnlOpcion1;
+    private JButton terminarPartidaButton;
+    private JPanel pnlOpcion2;
+    private JPanel pnlOpcion3;
+    private JButton nuevaPartidaButton;
+    private JButton salirDeLaMesaButton;
+    private JButton cerrarSesiónButton;
+    private JTextArea txtAreaHistorialDeMovimientos;
+    private JTextArea txtAreaEstadoDelJuego;
+    private JTextArea txtAreaIndicaciones;
 
     Partida partida = new Partida(this);
     PanelFichas [] panelFicha= new PanelFichas[32];
-    public TableroForm() {
+
+    int opcionJuego;
+
+    public TableroForm(int opcionDeJuego) {
+
+        opcionJuego = opcionDeJuego;
 
         panelFicha[0] = pnlFicha1;
         panelFicha[1] = pnlFicha2;
@@ -361,6 +377,18 @@ public class TableroForm extends JFrame{
 
             }
         });
+        salirDeLaMesaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtAreaEstadoDelJuego.setText("Boton SAlir de la mesa");
+            }
+        });
+        cerrarSesiónButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtAreaEstadoDelJuego.setText("Boton Cerrar Sesion");
+            }
+        });
     }
 
     private void createUIComponents() {
@@ -404,9 +432,25 @@ public class TableroForm extends JFrame{
 
     public void setConfig(){
         this.setContentPane(pnlMesa);
+        //this.setContentPane(pnlTablero);
         this.setTitle("E-Draughts");
+        this.setSize(950,700);
         //this.setSize(650,648);
-        this.setSize(900,700);
+
+        //
+        if(opcionJuego==1){
+            this.pnlOpcion1.setVisible(true);
+            this.pnlOpcion1.setEnabled(true);
+        }
+        else if(opcionJuego==2){
+            this.pnlOpcion2.setVisible(true);
+            this.pnlOpcion2.setEnabled(true);
+        }
+        else if(opcionJuego==3){
+            this.pnlOpcion3.setVisible(true);
+            this.pnlOpcion3.setEnabled(true);
+        }
+        //
         this.setResizable(true);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -432,5 +476,14 @@ public class TableroForm extends JFrame{
 
     public void setPanelFicha(int nroPanel,int estado){ //Actualiza el estado del Panel con el número dado
         panelFicha[nroPanel].estado=estado;
+    }
+    public void setTextAreaEstadoDeJuego(String s){
+        txtAreaEstadoDelJuego.setText(s);
+    }
+    public void setTextHistorialDeMovimientos(String s){
+        txtAreaHistorialDeMovimientos.setText(s);
+    }
+    public void setTextIndicaciones(String s){
+        txtAreaIndicaciones.setText(s);
     }
 }

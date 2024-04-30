@@ -1,108 +1,120 @@
 
-i
-java:S1604u"(Make this anonymous inner class a lambda(ªÂ¶•ùÿÿÿÿJ$09d6ab2d-439e-453e-a18a-4d3e3a6119a9
-d
-java:S1604|"(Make this anonymous inner class a lambda(¤²ÖJ$aa9c2d0a-919b-4722-8aa1-832b566e05aa
-e
-java:S1604„"(Make this anonymous inner class a lambda(Ò¾ìÎJ$ade6687a-5dc8-4833-affc-51ce6bd3d1b5
-e
-java:S1604Œ"(Make this anonymous inner class a lambda(İ½†ÑJ$6737c26e-4f7b-425b-aa5f-d29b2e22703f
-j
-java:S1604”"(Make this anonymous inner class a lambda(èÓ¿ÑûÿÿÿÿJ$cecf9ec0-cedd-40c2-b50b-94e192237fce
-e
-java:S1604œ"(Make this anonymous inner class a lambda(¦Ö¼J$15f18f6c-9b92-4dd3-9ada-155b680391d0
-j
-java:S1604¤"(Make this anonymous inner class a lambda(ÄæíûÿÿÿÿÿJ$f0135e6c-9201-4b3c-918e-351477fea581
-j
-java:S1604¬"(Make this anonymous inner class a lambda(”™´õÿÿÿÿÿJ$0121d272-6efa-444d-b72b-a4bbc48c31c8
-j
-java:S1604´"(Make this anonymous inner class a lambda(¨å¯ôşÿÿÿÿJ$221146a1-8d55-47e6-863a-ab8bf6686801
-j
-java:S1604»"(Make this anonymous inner class a lambda( ì¡²şÿÿÿÿJ$69dc3368-c5a2-4304-8227-cbe2f499b5cd
-j
-java:S1604Ã"(Make this anonymous inner class a lambda(á¯åóøÿÿÿÿJ$78c04824-8873-4c5d-8017-e36c8eca9336
-e
-java:S1604Ë"(Make this anonymous inner class a lambda(äÛ¼ŠJ$c805a6b4-927e-4f84-a8b3-22c96c6772db
-e
-java:S1604Ò"(Make this anonymous inner class a lambda(Ú–ÛşJ$e40c947f-7215-47fd-91b1-e1d59b3c256d
-d
-java:S1604Ø"(Make this anonymous inner class a lambda(Ç´çTJ$8a0efc4c-5f50-4f7c-b935-c593302fee62
-e
-java:S1604Ş"(Make this anonymous inner class a lambda(ƒ·´¤J$2802bb8b-27d3-4aaf-be49-a68cd9dae563
-j
-java:S1604ä"(Make this anonymous inner class a lambda(¨Ê¼×ùÿÿÿÿJ$6b301391-6b29-4e62-a5a9-d9a1da0596fa
-j
-java:S1604ì"(Make this anonymous inner class a lambda(Éÿ§”ûÿÿÿÿJ$28226ee9-a0a3-4ea1-99f9-4c07cda90dd4
-e
-java:S1604ô"(Make this anonymous inner class a lambda(‡ÚïğJ$ef561f05-bcea-4b11-b4f5-7a6458dd9368
-j
-java:S1604ü"(Make this anonymous inner class a lambda(©€úÚıÿÿÿÿJ$2fd4f3f1-de7b-43ff-bbb5-9329f1c2158d
-e
-java:S1604„"(Make this anonymous inner class a lambda(ù§ğJ$41e831f7-caf9-4820-9dec-358c23276a3b
-j
-java:S1604Œ"(Make this anonymous inner class a lambda(‘÷ÂÕÿÿÿÿÿJ$36849976-7867-4d4e-903c-7d1912b6ec3f
-j
-java:S1604”"(Make this anonymous inner class a lambda(Ù–®·øÿÿÿÿJ$b98f350f-4e73-4c63-8b2c-b17451a634ee
-j
-java:S1604œ"(Make this anonymous inner class a lambda(Ò» óùÿÿÿÿJ$6db726d8-70c6-4647-a71e-e473f50322e0
-e
-java:S1604¤"(Make this anonymous inner class a lambda(ãşÍJ$b6b84152-6c96-4c66-b835-2b2f41b97820
-j
-java:S1604¬"(Make this anonymous inner class a lambda(è…¾½şÿÿÿÿJ$2fea5c96-2d88-42d4-93b7-da14a661433c
-j
-java:S1604´"(Make this anonymous inner class a lambda(ò…ø¹øÿÿÿÿJ$8a9eb652-98f9-4a71-8659-dd27ba303396
-e
-java:S1604¼"(Make this anonymous inner class a lambda(õ“ù¿J$8924c77f-bba6-498a-b7fa-5af3bb461dab
-e
-java:S1604Ä"(Make this anonymous inner class a lambda(¾¸ËÛJ$04cf9227-ad82-4fc7-8443-8b29f3678f42
-j
-java:S1604Ì"(Make this anonymous inner class a lambda(¨–°®úÿÿÿÿJ$85814b8a-9c94-42cf-a703-065b985edd72
-e
-java:S1604Ô"(Make this anonymous inner class a lambda(÷¸ßçJ$1cc3aca5-6793-4155-aa47-2c8a03ce8336
-e
-java:S1604Ü"(Make this anonymous inner class a lambda(ÿÕ¼J$3f35b5a5-177a-44f3-916a-3d9e67f13d21
-d
-java:S1604ä"(Make this anonymous inner class a lambda(‹½ï0J$a2b4552f-4bdb-4eb3-9a5c-d5d02781efc5
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(øİ´ÈJ$4b0618b9-9866-45f0-9195-8f641f7f4be2
-•
-java:S1450K"YRemove the "pnlTablero" field and declare it as a local variable in the relevant methods.(¦ĞºÓJ$aa6c7705-9fee-40ee-84dc-b76e353dd05a
-e
-java:S1948M")Make "partida" transient or serializable.(ÓµñˆJ$37f5afa0-84d3-49bf-8068-03180d76f9e7
-|	java:S125x"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿJ$5d16e761-f572-49f6-88f3-15975ceeaecd
-w	java:S125"<This block of commented-out lines of code should be removed.(ÔµÖßJ$887a73bb-4ec4-4055-b487-71d40e989d94
-}	java:S125‡"<This block of commented-out lines of code should be removed.(Ê÷ÛØıÿÿÿÿJ$4ca1adf7-acaa-4e9f-9c0e-0303121c55ae
-}	java:S125"<This block of commented-out lines of code should be removed.(¶æÕ¢øÿÿÿÿJ$5c4009ea-6578-437b-b185-af991fab2b02
-x	java:S125—"<This block of commented-out lines of code should be removed.(’®‹J$95e9c680-d2ff-4120-9398-0f43c9520973
-}	java:S125Ÿ"<This block of commented-out lines of code should be removed.(ğ‹ùöúÿÿÿÿJ$439db590-34b1-4ead-a309-356b8afdd1f2
-}	java:S125§"<This block of commented-out lines of code should be removed.(ÈĞöúÿÿÿÿJ$cf2ef507-d4c9-406a-a63e-0328fa94af46
-x	java:S125¯"<This block of commented-out lines of code should be removed.(¢ÔÎ•J$0922fe97-521e-4f5f-beb0-318bf70095e1
-x	java:S125·"<This block of commented-out lines of code should be removed.(£¨ÍÕJ$6df5037e-6bf2-41c9-9261-52594105e44d
-w	java:S125¾"<This block of commented-out lines of code should be removed.(‚¶äTJ$ffeeeb2e-0f66-4824-891b-5948f5c08015
-}	java:S125Æ"<This block of commented-out lines of code should be removed.(³°Ç€şÿÿÿÿJ$a6865bc6-e777-42bc-93f8-04471ad8482b
-x	java:S125Î"<This block of commented-out lines of code should be removed.(ÂêåJ$94e19a74-da5a-485d-97e9-c6df1c493482
-}	java:S125ç"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿJ$fed0971c-007c-495f-8051-840d3efd96dc
-}	java:S125ï"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿJ$ba9dcca0-ef6b-4758-ae40-99388c05d1f8
-}	java:S125÷"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿJ$564963de-3c55-4139-b1f0-6024e05ad842
-}	java:S125ÿ"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿJ$5e9f8714-434b-441f-b139-b3d96336fe5e
-}	java:S125‡"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿJ$4f6a554f-ea14-4d4f-aeeb-682b08a77723
-w	java:S125"<This block of commented-out lines of code should be removed.(¹’ÎWJ$759a93c2-e644-484a-ae70-eb6920e32c13
-w	java:S125—"<This block of commented-out lines of code should be removed.(à¦õJ$995a5d60-4d46-4043-af2f-6f6706ee9431
-}	java:S125Ÿ"<This block of commented-out lines of code should be removed.(ó”ê¢úÿÿÿÿJ$46fef3ff-8eab-47d1-b3b5-e7cb5d910599
-w	java:S125§"<This block of commented-out lines of code should be removed.(¾ĞşJ$2e2797fa-3974-441f-8cb7-e4b8e2523e4f
-x	java:S125¯"<This block of commented-out lines of code should be removed.(Ò®‘ÖJ$1e44fb68-69f1-4887-92fe-b918cd5ab3d9
-}	java:S125·"<This block of commented-out lines of code should be removed.(ˆ×’ĞøÿÿÿÿJ$623825a0-2270-4def-a33b-1a5ca2298504
-}	java:S125¿"<This block of commented-out lines of code should be removed.(ÿœ½áûÿÿÿÿJ$7368fb9d-01d8-4a5b-9eb1-917d3c0b8fac
-}	java:S125Ç"<This block of commented-out lines of code should be removed.(é°¢ôûÿÿÿÿJ$0c8b9f41-5e19-45dd-9ec8-a2acbe794786
-}	java:S125Ï"<This block of commented-out lines of code should be removed.(È‹ËŠüÿÿÿÿJ$04e2bfea-fdbd-4bc1-9a98-5ce4c6ce7405
-}	java:S125×"<This block of commented-out lines of code should be removed.(Çú¼øÿÿÿÿJ$72e69a0e-c232-4759-987b-4796c9cde186
-}	java:S125ß"<This block of commented-out lines of code should be removed.(¶–¼üÿÿÿÿJ$a8a5c368-6fb2-4de0-a90b-9d053ece6ecf
-}	java:S125ç"<This block of commented-out lines of code should be removed.(Ñö¸ÛşÿÿÿÿJ$a9bdad83-2766-4d72-9c25-03717e848261
-o
-java:S1135ï"2Complete the task associated to this TODO comment.(¡ç‚ÏJ$961d65d8-5a4f-4968-8db2-3ed25e9bbcca
-x	java:S125˜"<This block of commented-out lines of code should be removed.(ø«µŠJ$e42d0dac-73ad-447c-ace2-89e6c8cb7738
-}	java:S125§"<This block of commented-out lines of code should be removed.(Ç¬àıÿÿÿÿJ$3421abe9-e485-4380-a59f-f067fba5c2db
-}	java:S125¬"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿJ$991a423e-4689-4345-a4af-0c99bad834f6
-j
-java:S1068K".Remove this unused "pnlTablero" private field.(¦ĞºÓJ$01874b92-58d1-430c-b52f-7fae4b127eb0
-y
-java:S1144î"7Remove this unused private "createUIComponents" method.(Á›°çıÿÿÿÿJ$df393740-86f6-4ca6-b7a3-3cd90f3d70fa
+q
+java:S1604…"(Make this anonymous inner class a lambda(ªÂ¶•ùÿÿÿÿ8ÁùÜ†ó1J$87dd7b0d-77e8-4991-b439-d50e4b1aa5bc
+l
+java:S1604Œ"(Make this anonymous inner class a lambda(¤²Ö8ÂùÜ†ó1J$47b456e8-0022-41bf-afef-429d405241f1
+l
+java:S1604”"(Make this anonymous inner class a lambda(Ò¾ìÎ8ÂùÜ†ó1J$c8e3a75b-fc77-42be-9804-5f7391cdcc68
+l
+java:S1604œ"(Make this anonymous inner class a lambda(İ½†Ñ8ÂùÜ†ó1J$54f549ef-4ab9-4332-a414-15940247b558
+q
+java:S1604¤"(Make this anonymous inner class a lambda(èÓ¿Ñûÿÿÿÿ8ÂùÜ†ó1J$053a1cc5-20cd-4d80-83c4-9c104cec00e9
+l
+java:S1604¬"(Make this anonymous inner class a lambda(¦Ö¼8ÃùÜ†ó1J$be647468-f62d-4fff-bc00-d8c8d5580efc
+q
+java:S1604´"(Make this anonymous inner class a lambda(Äæíûÿÿÿÿÿ8ÃùÜ†ó1J$ebdae9c6-d2d4-43a0-bbaf-b677258e9f02
+q
+java:S1604¼"(Make this anonymous inner class a lambda(”™´õÿÿÿÿÿ8ÃùÜ†ó1J$5f5ee7bf-f6c0-4d9a-a8cf-b55e0b628867
+q
+java:S1604Ä"(Make this anonymous inner class a lambda(¨å¯ôşÿÿÿÿ8ÃùÜ†ó1J$48641b23-6fe6-405e-8487-384d87ec5a37
+q
+java:S1604Ë"(Make this anonymous inner class a lambda( ì¡²şÿÿÿÿ8ÃùÜ†ó1J$c10abda1-7091-49a9-a59c-162376498170
+q
+java:S1604Ó"(Make this anonymous inner class a lambda(á¯åóøÿÿÿÿ8ÃùÜ†ó1J$b70c04a1-a670-40e3-af0a-b1812d53ad6d
+l
+java:S1604Û"(Make this anonymous inner class a lambda(äÛ¼Š8ÄùÜ†ó1J$7711b22b-6e28-4c3b-8ab9-118abbe80b2b
+l
+java:S1604â"(Make this anonymous inner class a lambda(Ú–Ûş8ÄùÜ†ó1J$a71e413d-2470-4d30-a7b7-94dd481460c5
+k
+java:S1604è"(Make this anonymous inner class a lambda(Ç´çT8ÄùÜ†ó1J$e8bc9ffc-0fd9-4b78-b10d-6e1338367cbf
+l
+java:S1604î"(Make this anonymous inner class a lambda(ƒ·´¤8ÄùÜ†ó1J$c618cf13-1a95-40b1-a8a3-2799abad71c3
+q
+java:S1604ô"(Make this anonymous inner class a lambda(¨Ê¼×ùÿÿÿÿ8ÄùÜ†ó1J$ad32c0d5-f981-4815-a5af-3aa6bc2441de
+q
+java:S1604ü"(Make this anonymous inner class a lambda(Éÿ§”ûÿÿÿÿ8ÄùÜ†ó1J$b29ed8ff-06fa-4fe8-87cd-44fb48b066a1
+l
+java:S1604„"(Make this anonymous inner class a lambda(‡Úïğ8ÄùÜ†ó1J$ede96a40-a341-4d7e-bcb8-47e02766424b
+q
+java:S1604Œ"(Make this anonymous inner class a lambda(©€úÚıÿÿÿÿ8ÅùÜ†ó1J$797cdd1c-9726-427a-aee3-ac8020dbaacd
+l
+java:S1604”"(Make this anonymous inner class a lambda(ù§ğ8ÅùÜ†ó1J$dcf20218-126b-4e64-8166-574233302898
+q
+java:S1604œ"(Make this anonymous inner class a lambda(‘÷ÂÕÿÿÿÿÿ8ÅùÜ†ó1J$196a1b76-bfb3-467f-ab89-78135ab59cb0
+q
+java:S1604¤"(Make this anonymous inner class a lambda(Ù–®·øÿÿÿÿ8ÅùÜ†ó1J$08c4e015-86e9-4ed1-b875-d2baf8bf84af
+q
+java:S1604¬"(Make this anonymous inner class a lambda(Ò» óùÿÿÿÿ8ÅùÜ†ó1J$391649ad-f153-4939-bd0b-1499bfc2d193
+l
+java:S1604´"(Make this anonymous inner class a lambda(ãşÍ8ÅùÜ†ó1J$539d0cbb-e8f2-4321-840f-1ee746c17466
+q
+java:S1604¼"(Make this anonymous inner class a lambda(è…¾½şÿÿÿÿ8ÅùÜ†ó1J$8f4d2079-c958-4c46-bd49-937a65ac5417
+q
+java:S1604Ä"(Make this anonymous inner class a lambda(ò…ø¹øÿÿÿÿ8ÅùÜ†ó1J$889157ef-3249-4701-991b-a641c97fa660
+l
+java:S1604Ì"(Make this anonymous inner class a lambda(õ“ù¿8ÆùÜ†ó1J$a12bade7-89f8-4d67-9060-0e6707b7e04e
+l
+java:S1604Ô"(Make this anonymous inner class a lambda(¾¸ËÛ8ÆùÜ†ó1J$b7d46f1f-a619-4038-a2c0-c7ab6a096487
+q
+java:S1604Ü"(Make this anonymous inner class a lambda(¨–°®úÿÿÿÿ8ÆùÜ†ó1J$13768c77-7427-41fb-b133-f1594345f4f1
+l
+java:S1604ä"(Make this anonymous inner class a lambda(÷¸ßç8ÆùÜ†ó1J$1c8132c7-b76d-4218-b194-672c1792e4bb
+l
+java:S1604ì"(Make this anonymous inner class a lambda(ÿÕ¼8ÆùÜ†ó1J$c74546a4-8d5d-4701-9f82-75713b2341d1
+k
+java:S1604ô"(Make this anonymous inner class a lambda(‹½ï08ÆùÜ†ó1J$91240e32-7588-49c4-bb09-8a71b4023951
+q
+java:S1604ü"(Make this anonymous inner class a lambda(€ç€Èıÿÿÿÿ8ÆùÜ†ó1J$68d1a77b-be05-44e6-9d34-c6d400994c74
+q
+java:S1604‚"(Make this anonymous inner class a lambda(„ßğÿÿÿÿÿ8ÆùÜ†ó1J$05dda63d-fac9-4a45-a702-9120a0a877dc
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(øİ´È8ÕùÜ†ó1J$4a477726-40f8-4fbf-b7da-05d4b0dc18b7
+¥	java:S116S"^Rename this field "cerrarSesiÃ³nButton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îªüşÿÿÿÿ8œúÜ†ó1J$4d24c550-28b2-4bd4-a2e6-8a932d0035ef
+œ
+java:S1450K"YRemove the "pnlTablero" field and declare it as a local variable in the relevant methods.(¦ĞºÓ8¸úÜ†ó1J$cc7e9450-ac1c-4bce-8a9e-45a8872743f2
+l
+java:S1948X")Make "partida" transient or serializable.(Óµñˆ8¼úÜ†ó1J$38cb0e8c-460b-4665-8109-c28cc059e5de
+„	java:S125ˆ"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿ8ÔúÜ†ó1J$fe246ef6-362d-462f-b46e-695a0cbeaa78
+	java:S125"<This block of commented-out lines of code should be removed.(ÔµÖß8×úÜ†ó1J$6f7bf8b5-0fe1-43e4-bd28-8808dfc45ee6
+„	java:S125—"<This block of commented-out lines of code should be removed.(Ê÷ÛØıÿÿÿÿ8ÙúÜ†ó1J$d031a9fd-a57b-4e81-a4fd-0c15a1101dde
+„	java:S125Ÿ"<This block of commented-out lines of code should be removed.(¶æÕ¢øÿÿÿÿ8ÜúÜ†ó1J$e208abea-87df-4ce2-84ba-1de93e6173d1
+	java:S125§"<This block of commented-out lines of code should be removed.(’®‹8ŞúÜ†ó1J$a1bd50c8-abed-4aeb-9bca-4b74e59fc4bf
+„	java:S125¯"<This block of commented-out lines of code should be removed.(ğ‹ùöúÿÿÿÿ8âúÜ†ó1J$aa661088-c320-424b-bc24-1dac74c0d10a
+„	java:S125·"<This block of commented-out lines of code should be removed.(ÈĞöúÿÿÿÿ8åúÜ†ó1J$8b647bb2-b455-4f70-9a9a-d22ba86a47bf
+	java:S125¿"<This block of commented-out lines of code should be removed.(¢ÔÎ•8æúÜ†ó1J$341811f7-65c3-4d46-b561-ea0504c50a0e
+	java:S125Ç"<This block of commented-out lines of code should be removed.(£¨ÍÕ8éúÜ†ó1J$bc1e12b9-2068-481d-ba44-3f90bad404c4
+~	java:S125Î"<This block of commented-out lines of code should be removed.(‚¶äT8ìúÜ†ó1J$2414cce4-275f-47a1-9e59-e12cd8201ee8
+„	java:S125Ö"<This block of commented-out lines of code should be removed.(³°Ç€şÿÿÿÿ8ñúÜ†ó1J$62077b24-1fba-49a8-b7ce-b25fd111aa9c
+	java:S125Ş"<This block of commented-out lines of code should be removed.(Âêå8ôúÜ†ó1J$eb871e87-beea-4e5d-a52d-e4cbbe54fba0
+„	java:S125÷"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿ8şúÜ†ó1J$2d31bab7-bb1b-4797-aaf8-5e25c059b439
+„	java:S125ÿ"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿ8ûÜ†ó1J$86ec9cb5-7342-45d2-b2e9-861d5b311ef6
+„	java:S125‡"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿ8ƒûÜ†ó1J$d5cf2f16-f23e-4d12-a386-4cc688ab6c02
+„	java:S125"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿ8‡ûÜ†ó1J$8071f78b-2033-45c3-a3c9-4d841a440732
+„	java:S125—"<This block of commented-out lines of code should be removed.(Šá‚üÿÿÿÿ8ŠûÜ†ó1J$a7ec61d9-64a4-4c77-9a23-6579c0aa5790
+~	java:S125Ÿ"<This block of commented-out lines of code should be removed.(¹’ÎW8ûÜ†ó1J$5ed119ad-cab8-4477-ab25-f5411413f9d1
+~	java:S125§"<This block of commented-out lines of code should be removed.(à¦õ8‘ûÜ†ó1J$babe5bac-5080-4766-8ce1-7d84a95056cd
+„	java:S125¯"<This block of commented-out lines of code should be removed.(ó”ê¢úÿÿÿÿ8”ûÜ†ó1J$eb053218-9394-4270-bdf8-a6339b6a5018
+~	java:S125·"<This block of commented-out lines of code should be removed.(¾Ğş8˜ûÜ†ó1J$75ba1515-6138-430c-bad4-2cb948a4a976
+	java:S125¿"<This block of commented-out lines of code should be removed.(Ò®‘Ö8›ûÜ†ó1J$2255dbb7-15c8-429a-ac94-fb405dd40c2d
+„	java:S125Ç"<This block of commented-out lines of code should be removed.(ˆ×’Ğøÿÿÿÿ8 ûÜ†ó1J$42d1de58-ad39-4e24-9ec1-cb05fb4840fe
+„	java:S125Ï"<This block of commented-out lines of code should be removed.(ÿœ½áûÿÿÿÿ8£ûÜ†ó1J$4ff22977-254e-4a98-9544-1bd613c588ef
+„	java:S125×"<This block of commented-out lines of code should be removed.(é°¢ôûÿÿÿÿ8­ûÜ†ó1J$14ae9669-a569-4409-aee3-dcd3c39d0569
+„	java:S125ß"<This block of commented-out lines of code should be removed.(È‹ËŠüÿÿÿÿ8µûÜ†ó1J$1e439016-b57b-4f1b-985a-c2e8cf53b35e
+„	java:S125ç"<This block of commented-out lines of code should be removed.(Çú¼øÿÿÿÿ8ºûÜ†ó1J$dead0007-7db8-40ac-a6c6-97503bf92fb4
+„	java:S125ï"<This block of commented-out lines of code should be removed.(¶–¼üÿÿÿÿ8¿ûÜ†ó1J$a7b1d4f7-c276-457c-a6f1-165ac1a48e87
+„	java:S125÷"<This block of commented-out lines of code should be removed.(Ñö¸Ûşÿÿÿÿ8ÃûÜ†ó1J$6ae21d67-59bc-4ffb-83e1-d26da42b9792
+v
+java:S1135‹"2Complete the task associated to this TODO comment.(¡ç‚Ï8×ûÜ†ó1J$753da53e-4d67-4589-96d9-e63b6dcea91b
+	java:S125³"<This block of commented-out lines of code should be removed.(ŞªÅ“8ãûÜ†ó1J$3a9fa9eb-ed41-4fd8-88a7-32184f0e8907
+	java:S125¶"<This block of commented-out lines of code should be removed.(ø«µŠ8äûÜ†ó1J$7166fde9-d872-4e2a-9656-b8f3e8c58e3c
+„	java:S125Ó"<This block of commented-out lines of code should be removed.(Ç¬àıÿÿÿÿ8êûÜ†ó1J$0f662bfc-abd9-44e1-9701-0cc90095b1ce
+„	java:S125Ø"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8êûÜ†ó1J$f83f988a-a2d5-4faa-aec3-6277eaed3e98
+q
+java:S1068K".Remove this unused "pnlTablero" private field.(¦ĞºÓ8íûÜ†ó1J$bc0fb43f-9c94-4829-86a0-72c6808de163
+w
+java:S1068L"/Remove this unused "pnlOpciones" private field.(˜Ù–µşÿÿÿÿ8íûÜ†ó1J$2a6ae279-a930-448f-a8d9-5583de05723d
+|
+java:S1068N"9Remove this unused "terminarPartidaButton" private field.(‡Ò¢µ8íûÜ†ó1J$1a4349ee-e0d1-4fd0-9db0-e738ad73cccd
+x
+java:S1068Q"6Remove this unused "nuevaPartidaButton" private field.(‹óÈy8íûÜ†ó1J$4f96905c-b865-44c2-a8ac-7cdb29b4c0a5
+€
+java:S1144Š"7Remove this unused private "createUIComponents" method.(Á›°çıÿÿÿÿ8ğûÜ†ó1J$18f0efe8-e1ee-4f8b-9ba9-77b31d225f73

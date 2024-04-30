@@ -1,0 +1,21 @@
+
+†	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$1dc30cf8-85d1-4078-aaf7-25fcbc240132
+†	java:S112d"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$e2c7c7c3-d7ec-49f7-ac69-4fda967eb3d0
+‡	java:S112¥"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$1843da9f-2888-4813-bbab-b8a17a4a0134
+‡	java:S112¨"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$e50630a6-7915-4d3f-8cf0-0dd44b2c52c9
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Ã‘ÛıÿÿÿÿJ$c2859789-5e68-421f-a64e-1be1740dbd93
+u
+java:S3516,"9Refactor this method to not always return the same value.(Çş“ùJ$9aa1e1d8-20b6-4811-af38-e153ce6b829e
+½
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÏÈ²ÍJ$bcf1309a-93b4-4555-af62-54fba3566918
+
+java:S1450"]Remove the "modeloUsuarios" field and declare it as a local variable in the relevant methods.(À…¹úÿÿÿÿJ$54863370-2bc3-49fb-b00d-c75d5a5c7a4f
+k	java:S106!"+Replace this use of System.out by a logger.(ùùàÍüÿÿÿÿJ$7c19b3ae-3f39-493e-8629-3a11f0b64593
+
+java:S6353)"CUse concise character class syntax '\\w' instead of '[a-zA-Z0-9_]'.(ªÊ»J$76211260-91a8-4f21-a075-612b743c4694
+p
+java:S1068"4Remove this unused "LONGITUD_USUARIO" private field.(ÃÅJ$f952339c-c6df-4f8c-8fe1-23514a300e03
+p
+java:S1068"5Remove this unused "PBKDF2_ITERATIONS" private field.(á¨£"J$b9836a0a-80ce-42b0-8200-910f000dfab4
+s
+java:S1068"2Remove this unused "HASH_BYTE_SIZE" private field.(Ñ‡°ûÿÿÿÿJ$8374fe82-296b-41e4-abf6-22878c5259ae

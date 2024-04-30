@@ -1,0 +1,26 @@
+
+e
+java:S1192Z"ODefine a constant instead of duplicating this literal "invencible1234" 3 times.(©°∞Ò
+k
+java:S1192M"PDefine a constant instead of duplicating this literal "pruebaTest1234#" 4 times.(ùÒ˚√˙ˇˇˇˇ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ë√ë€˝ˇˇˇˇ
+ú
+java:S1186"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¶’ﬂ†˚ˇˇˇˇ
+ñ
+java:S1186"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÄŸ±Y
+ú
+java:S11866"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÙµû˚ˇˇˇˇ
+ó
+java:S1186:"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(≠ﬂêπ
+ó
+java:S1186>"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( õÈ˝
+ó
+java:S1186B"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ…Õ»
+ó
+java:S1186∫"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ë“÷3
+3
+java:S2119I"Save and re-use this "Random".(º›≈f
+3
+java:S2119h"Save and re-use this "Random".(º›≈f
+A
+java:S5960%"+Remove this assertion from production code.(Ò¡Úﬂ

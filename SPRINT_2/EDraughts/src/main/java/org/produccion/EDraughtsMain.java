@@ -3,13 +3,26 @@ package org.produccion;
 import org.produccion.Controlador.Partida;
 import org.produccion.Visual.GUI;
 import org.produccion.Visual.LoginForm;
+import org.produccion.Visual.PantallaInicialForm;
 import org.produccion.Visual.PartidaGUI;
 import org.produccion.Visual.Tablero.TableroForm;
 
 public class EDraughtsMain {
+
     public static void main(String[] args) {
-//        LoginForm formulario = new LoginForm();
-//        formulario.setConfig();
+
+        //LoginForm formulario = new LoginForm();
+        //formulario.setConfig();
+
+        // Credenciales para probar las funcionalidades
+        // Usuario: pepito123
+        // Contraseña: Pepote-123
+
+        //PantallaInicialForm pantalla = new PantallaInicialForm("Alberto");
+        //pantalla.setConfig();
+
+
+
 
         //Prueba del tablero-------
         //Dejare esto sin comentar para poder debugear mas rapido sin necesidad de iniciar sesion
@@ -19,9 +32,12 @@ public class EDraughtsMain {
 
         // Se volvió a agregar la carpeta "Tablero" a la carpeta "Visual"
         // para poder poder visualizar el Tablero  con el formato anterior
-        TableroForm tableroForm = new TableroForm();
+
+        TableroForm tableroForm = new TableroForm(3);
         tableroForm.setConfig();
-        // TableroForm es la GUI
+
+        // TableroForm es la GUI durante la partida
+
         // Se volvió a agregar la clase Partida en la carpeta Controlador,
         // Y una nueva imagen "TableroMarcado.png" en la carpeta de Imagenes
         //Se proporcionan las entradas haciendo click en los botones

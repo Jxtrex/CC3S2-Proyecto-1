@@ -1,0 +1,26 @@
+
+D
+java:S1604—"(Make this anonymous inner class a lambda(Ô¶µÿþÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(îºø ûÿÿÿÿ
+?
+java:S1948")Make "tablero" transient or serializable.(­åÿ®
+U
+java:S11619":Add the "@Override" annotation above this method signature(Ä Ïúüÿÿÿÿ
+@	java:S106?"+Replace this use of System.out by a logger.(¸¬–ê
+@	java:S106A"+Replace this use of System.out by a logger.(ÆÀûý
+@	java:S106G"+Replace this use of System.out by a logger.(“ÐÅ¹
+Q	java:S125S"<This block of commented-out lines of code should be removed.(ý”Í¬
+Z
+java:S1134a"DTake the required action to fix the issue indicated by this comment.(ì·å
+N
+java:S1854€"7Remove this useless assignment to local variable "url".(ýíìÜ
+7
+java:S2129€" Remove this "String" constructor(ýíìÜ
+:
+java:S3398"Move this method into "Fichas".(ã›äðýÿÿÿÿ
+C
+java:S1068"-Remove this unused "panelMain" private field.(‘§œò
+G
+java:S1144b"1Remove this unused private "drawDraughts" method.(¦›÷
+J
+java:S1144u"/Remove this unused private "drawRulers" method.(çÂÔóýÿÿÿÿ
