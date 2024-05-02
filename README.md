@@ -13,11 +13,11 @@
     - [ ] email
     - [X] contraseña
 - [X] Inicio de Sesión
-- [ ] Cierre de Sesión
-- [ ] Gameplay
+- [X] Cierre de Sesión
+- [X] Gameplay
     - [X] Colocación de fichas
-    - [ ] Movimientos de fichas
-    - [ ] Implementación de reglas de juego 
+    - [X] Movimientos de fichas
+    - [X] Implementación de reglas de juego 
 - [ ] Grabación del juego
     - [ ] fecha 
     - [ ] hora 
@@ -28,7 +28,7 @@
 - [ ] Multijugador
     - [ ] Contra otro usuario
     - [ ] Contra la máquina
-- [ ] Marco de Prueba Unitario 
+- [X] Marco de Prueba Unitario (Parcialmente) 
 
 ## Reglas de Juego: [Fuente de las Reglas](https://www.draughtsforandroid.com/news/draughts-different-rules-game-53.html) (Link temporal hasta conseguir una fuente más oficial)
 - El tablero es de 8x8 casillas, las piezas se mueven es los espacios oscuros.
@@ -39,4 +39,3 @@
 - El rey puede moverse y capturar hacia adelante y hacia atrás, pero solo una casilla.
 - Puedes hacer una captura concatenada si las piezas están en fila separadas por una casilla, si es una pieza regular solo puede capturar hacia adelante.
 - Si puedes capturar una pieza estás obligado a hacerlo, pero no estás obligado a capturar la mayor cantidad de piezas posible.
-- Si el jugador no captura cuando debería debe moverse hacia atrás y corregir su error.
