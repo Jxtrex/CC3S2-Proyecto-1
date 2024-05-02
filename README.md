@@ -1,5 +1,6 @@
 # English Draughts
- **Integrantes**:
+ ![alt text](SPRINT_2/EDraughts/recursos/Imagenes/GUI.PNG)
+**Integrantes**:
  
 | Nombre                | Apellidos     | Código    |
 | --------------------- | ------------- | --------- |
