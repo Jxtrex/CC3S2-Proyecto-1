@@ -2,7 +2,7 @@
 ## Título del Proyecto: EDraughts
 
 ## Visión:
-Ofrecer una aplicación que permita a los usuarios poner a prueba sus habilidades en el juego de damas (English Draughts) ya sea contra jugadores en línea, sus amigos o contra la máquina.
+Ofrecer una aplicación que permita a los usuarios poner a prueba sus habilidades en el juego de damas (English Draughts) conta
 
 ## Declaración de la misión/propósito del proyecto
 El propósito del proyecto es desarrollar una aplicación en equipo poniendo en práctica nuestros conocimientos adquiridos en el curso de Desarrollo de Software.
@@ -23,22 +23,22 @@ posteriores al periodo de pruebas.
 Para los alumnos de la UNI que quieran una mejor manera de matar el tiempo,E-Draughts es un juego web fácilmente accesible que cuenta con multijugador online. 
 
 ## Valor de negocio:
-I/. 1 000 000
+- S/. 35 / h * 24 h * 3 personas - S/. 50 / día * 7 días(mora) =  S/. 2170
 
 ## Clientes y usuarios:
 - Mis compañeros de clase  
 - El profesor del curso
 - El equipo de desarrollo del Grupo 1
-- 
+
 ## Métricas: 
 Las siguientes son métricas tentativas que se usarán para calcular el valor del negocio:
 -  Disponibilidad del servicio del juego
--  
 
 ## Hitos: momentos importantes en el tiempo
-- Lanzamiento del juego en su estado `pre-alfa`
-- Lanzamiento del juego en su estado `alfa`
-- Lanzamiento del juego en su estado `beta`
+- Finalización del `Spring 3`
+- Fase interna de pruebas del juego
+- Fase de pruebas en la sala 5
+
 ## Riesgos: cosas que pueden amenazar o descarrilar su proyecto 
 - Conflicto de horarios de clases del equipo de desarrollo que limitan el tiempo que se le puede dedicar al proyecto    
 

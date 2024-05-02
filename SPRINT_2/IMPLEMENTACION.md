@@ -3,7 +3,7 @@
 
 | ID y nombre de la historia del usuario | AC-ID | Nombre(s) de clase | Nombre(s) del método | Desarrollador | Estado | Notas (opcional) |
 | -------------------------------------- | ----- | ------------------ | -------------------- | ------------- | ------ | ---------------- |
-| FLAG                                   | FLAG  | FLAG               | FLAG                 | FLAG          | FLAG   | FLAG             |
+| -                                   | -  | -               | -                 | -          | -   | -             |
 
 
 ## Resumen del código de prueba automatizado (que corresponden directamente a algunos criterios de aceptación)
